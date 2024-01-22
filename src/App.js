@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header";
+import ChatBot from "./components/ChatBot";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="bg-purple-200 min-h-screen flex flex-col">
+      <Header />
+      <Navbar />
+      <div className="bg-white rounded-lg shadow-lg p-6 m-4">
+        <h1 className="text-4xl font-extrabold text-purple-700 mb-6 text-center">
+          Welcome to the Student Chat Interface
+        </h1>
+        <p className="text-gray-800 text-xl mb-8 text-center">
+          Here you can interact with our AI chatbot.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <ChatBot />
+      </div>
     </div>
   );
 }
