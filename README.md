@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Hardin Helper AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **Hardin Helper AI**, the dedicated AI assistant designed specifically for the students of Hardin-Simmons University. Our goal is to make campus life more navigable and to provide instant assistance for all your university-related queries.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Campus Navigation**: Get detailed directions to various campus locations.
+- **Course Information**: Inquire about course details, schedules, and professor office hours.
+- **Event Updates**: Stay updated with the latest campus events and activities.
+- **Administrative Assistance**: Get help with administrative processes, forms, and deadlines.
+- **24/7 Availability**: Always there for you, anytime, day or night.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To get started with Hardin Helper AI, follow these simple steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Installation**: No installation required! Access the AI directly from our website.
+2. **Sign Up/Login**: Use your university credentials to sign up or log in.
+3. **Ask Away**: Simply type in your question and let Hardin Helper AI assist you.
 
-### `npm test`
+## How to Use
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Navigate to the Hardin Helper AI chat interface.
+- Type in your query in the chat window.
+- Receive instant responses and follow-up interactions.
 
-### `npm run build`
+## Technology
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Hardin Helper AI is powered by the latest in AI technology, ensuring accurate and timely responses. Key technologies include:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ChatGPT4All API
+- Responsive Web Design for accessibility on any device
+- Secure and private data handling
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributions
 
-### `npm run eject`
+We welcome contributions from students and faculty. If you have suggestions or want to contribute to the development of Hardin Helper AI, please follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a new Pull Request.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Support
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+For support, email contact@hsu.edu or visit our support page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Authors and Acknowledgment
 
-## Learn More
+Created by the Hardin-Simmons University IT Department, with special thanks to the student contributors from the Computer Science program.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License.
 
-### Code Splitting
+## FAQs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Q: Do I need to be on campus to use Hardin Helper AI?**
 
-### Analyzing the Bundle Size
+A: No, Hardin Helper AI is accessible anywhere with an internet connection.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Q: Is Hardin Helper AI secure?**
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A: Yes, we prioritize user privacy and data security.
