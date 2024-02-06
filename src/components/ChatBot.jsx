@@ -16,7 +16,7 @@ function ChatBot() {
 
     try {
       // Need to find GPT4ALL api endpoint
-      const response = await fetch("https://your.api/endpoint", {
+      const response = await fetch("http://127.0.0.1:5000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,9 +45,26 @@ function ChatBot() {
     setMessage("");
   };
 
+  function clearChat(){
+    const parent = document.getElementById("chatHistory");
+    const children = parent.children;
+    Array.from(children).forEach(function(child) {
+      child.remove();
+  }); 
+  }
+
+  function saveChat(){
+    const userInputs = document.querySelectorAll(".message.user");
+    const botInputs = document.querySelectorAll(".message.bot");
+    Array.from(userInputs).forEach(function(input) {
+      // Replace this wit database stuff later and include another function for bot inputs
+      alert(input.textContent);
+    }); 
+  }
+
   return (
     <div className="chat-section flex flex-col h-96 bg-gradient-to-br from-purple-200 to-purple-300 rounded-xl shadow-2xl p-6">
-      <div className="flex-grow overflow-auto mb-4 p-4 bg-white rounded-xl shadow-inner">
+      <div className="flex-grow overflow-auto mb-4 p-4 bg-white rounded-xl shadow-inner" id="chatHistory">
         {chatHistory.map((chat, index) => (
           <div key={index} className={`message ${chat.sender}`}>
             {chat.text}
@@ -68,6 +85,10 @@ function ChatBot() {
         >
           Send
         </button>
+      </div>
+      <div className="flex justify-evenly">
+        <button onClick={clearChat}>Clear Chat</button>
+        <button onClick={saveChat}>Save Chat</button>
       </div>
     </div>
   );

@@ -5,8 +5,6 @@ import Form from "../components/Form";
 export default function Admin() {
   return (
     <div>
-      <Header />
-      <Navbar />
       <Form />
     </div>
   );
