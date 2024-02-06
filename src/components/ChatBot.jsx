@@ -14,6 +14,8 @@ function ChatBot() {
     const newMessage = { text: message, sender: "user" };
     setChatHistory([...chatHistory, newMessage]);
 
+    setMessage("");
+
     try {
       // Need to find GPT4ALL api endpoint
       const response = await fetch("http://127.0.0.1:5000/chat", {
@@ -42,9 +44,6 @@ function ChatBot() {
       console.error("Failed to send message:", error);
       // Optionally handle the error in UI
     }
-
-    // Clear the message input
-    setMessage("");
   };
 
   return (
