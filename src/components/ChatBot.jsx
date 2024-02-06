@@ -16,13 +16,13 @@ function ChatBot() {
 
     try {
       // Need to find GPT4ALL api endpoint
-      const response = await fetch("https://your.api/endpoint", {
+      const response = await fetch("http://127.0.0.1:5000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           // Auth Headers
         },
-        body: JSON.stringify({ message: message }),
+        body: JSON.stringify({ user_input: message }),
       });
 
       if (!response.ok) {
@@ -30,6 +30,8 @@ function ChatBot() {
       }
 
       const responseData = await response.json();
+      console.log(responseData); // Add this line to log the response data
+
       // Update chat history with the response
       setChatHistory([
         ...chatHistory,

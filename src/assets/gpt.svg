@@ -1,8 +1,8 @@
 <svg width="500px" height="150px" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stylish "Powered by ChatGPT" Text -->
+  <!-- Stylish "Powered by GPT4ALL" Text -->
   <text x="10" y="60" font-family="Arial" font-size="30" fill="#4F46E5" font-weight="bold">
     Powered by 
-    <tspan font-family="Arial" font-weight="bold" font-size="30" fill="#10B981">ChatGPT</tspan>
+    <tspan font-family="Arial" font-weight="bold" font-size="30" fill="#10B981">GPT4All</tspan>
   </text>
 
   <!-- Symbolic Chat Bubble for ChatGPT-like Image -->
