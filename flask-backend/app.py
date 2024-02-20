@@ -4,7 +4,7 @@ from gpt4all import GPT4All
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/chat": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/chat": {"origins": "*"}})
 
 model = GPT4All("orca-mini-3b-gguf2-q4_0.gguf")
 
@@ -35,6 +35,4 @@ def chat():
 #chat(u_in)
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
-
+    app.run(host='0.0.0.0', port=5000)
