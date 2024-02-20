@@ -16,12 +16,6 @@ function Navbar() {
         >
           About
         </a>
-        <a
-          href="/contact"
-          className="font-semibold text-white hover:text-yellow-500 mx-4 lg:mx-10 transition duration-300 transform hover:-translate-y-1"
-        >
-          Admin Page
-        </a>
         {/* Add other navigation links as needed */}
       </div>
     </nav>
