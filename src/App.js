@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Navbar />
       <div className="bg-white rounded-lg shadow-lg p-6 m-4">
-        <h1 className="text-4xl font-extrabold text-purple-700 mb-6 text-center">
+        <h1 className="text-4xl font-extrabold text-purple mb-6 text-center">
           Welcome to the Student Chat Interface
         </h1>
         <p className="text-gray-800 text-xl mb-8 text-center">

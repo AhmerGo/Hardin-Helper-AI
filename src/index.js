@@ -10,7 +10,7 @@ root.render(
     <Router>
       <Routes>
         <Route index element={<App />} />
-        <Route path="/contact" element={<Admin />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
   </React.StrictMode>
