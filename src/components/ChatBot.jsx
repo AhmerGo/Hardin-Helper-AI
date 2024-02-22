@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function ChatBot() {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
-
+  
   const sendMessage = async () => {
     if (message.trim() === "") {
       // Optionally handle empty message case
@@ -64,7 +64,7 @@ function ChatBot() {
   }
 
   return (
-    <div className="chat-section flex flex-col h-96 bg-gradient-to-br from-purple-200 to-purple-300 rounded-xl shadow-2xl p-6">
+    <div className="chat-section flex flex-col h-96 bg-purple rounded-xl shadow-2xl p-6">
       <div className="flex-grow overflow-auto mb-4 p-4 bg-white rounded-xl shadow-inner" id="chatHistory">
         {chatHistory.map((chat, index) => (
           <div key={index} className={`message ${chat.sender}`}>
@@ -82,14 +82,23 @@ function ChatBot() {
         />
         <button
           onClick={sendMessage}
-          className="bg-purple-600 text-white p-3 rounded-r-xl hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:scale-105"
+          className="bg-purple text-white p-3 rounded-r-xl hover:bg-purple-700  focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:scale-105"
         >
           Send
         </button>
       </div>
       <div className="flex justify-evenly">
-        <button onClick={clearChat}>Clear Chat</button>
-        <button onClick={saveChat}>Save Chat</button>
+        <button onClick={clearChat}
+          className="bg-purple text-white p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:text-[#FFC72C]"
+          >
+          Clear Chat
+        </button>
+        <button onClick={saveChat}
+          className="bg-purple text-white p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:text-[#FFC72C]"
+
+        >
+          Save Chat
+        </button>
       </div>
     </div>
   );

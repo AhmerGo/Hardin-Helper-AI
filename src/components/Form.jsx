@@ -6,14 +6,23 @@ export default function Form(){
     const [password, setPassword] = useState("");
     function handleForm(event){
         event.preventDefault();
-        if(username != "admin"){
+        if(username !== "admin"){
             alert("Username not recognized"); 
         }
-        if(password != "password"){
+        if(password !== "password"){
             alert("Password not recognized"); 
         }
     }
+    const getInputClassName = (value) => {
+        // If input value is empty, apply placeholder-centered style
+        if (value === '') {
+            return 'w-full my-3 border border-black rounded-md placeholder-center text-center';
+        }
+        // If input value is not empty, apply text-left style
+        return 'w-full my-3 border border-black rounded-md text-left';
+    };
     return(
+
         <div className="flex flex-wrap justify-center my-14">
             <form onSubmit={handleForm}>
             <img src={Logo} alt="HSU Logo"/>
@@ -22,7 +31,7 @@ export default function Form(){
                     name="username" 
                     id="username" 
                     placeholder="Username"
-                    className="w-full my-3 border border-black rounded-md" 
+                    className={getInputClassName(username)} 
                     onChange={(e) => setUsername(e.target.value)}
                     />
                 <input 
@@ -31,7 +40,7 @@ export default function Form(){
                     id="password" 
                     placeholder="Password" 
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full my-3 border border-black rounded-md" />
+                    className={getInputClassName(password)} />
                 <br />
                 <section className="flex flex-wrap justify-evenly">
                 <button type="submit">Submit</button>

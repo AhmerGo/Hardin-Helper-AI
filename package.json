@@ -7,6 +7,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.17",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.2",
     "postcss": "^8.4.33",
     "postcss-cli": "^11.0.0",
     "react": "^18.2.0",
@@ -58,6 +60,26 @@
     "@babel/core": "^7.23.7",
     "@babel/plugin-proposal-decorators": "^7.23.7",
     "@babel/preset-env": "^7.23.8",
-    "@babel/preset-react": "^7.23.3"
+    "@babel/preset-react": "^7.23.3",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "path-browserify": "^1.0.1",
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.3",
+    "util": "^0.12.5",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "resolutions": {
+    "zlib": "browserify-zlib",
+    "querystring": "querystring-es3",
+    "path": "path-browserify",
+    "crypto": "crypto-browserify",
+    "stream": "stream-browserify",
+    "buffer": "buffer",
+    "url": "url",
+    "util": "util"
   }
 }
