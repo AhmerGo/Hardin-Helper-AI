@@ -76,25 +76,25 @@ function ChatBot() {
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="flex-grow p-3 border border-gray-300 rounded-l-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:border-transparent"
+          className="flex-grow p-3 border border-gray-300 rounded-l-xl focus:outline-none  focus:border-transparent"
           placeholder="Type your message..."
           style={{ resize: "none" }}
         />
         <button
           onClick={sendMessage}
-          className="bg-purple text-white p-3 rounded-r-xl hover:bg-purple-700  focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:scale-105"
+          className="bg-[#401486] text-white p-3 rounded-r-xl shadow-md hover:bg-purple-700  focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:text-gold hover:scale-105"
         >
           Send
         </button>
       </div>
-      <div className="flex justify-evenly">
+      <div className="flex justify-evenly my-2.5">
         <button onClick={clearChat}
-          className="bg-purple text-white p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:text-[#FFC72C]"
+          className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
           >
           Clear Chat
         </button>
         <button onClick={saveChat}
-          className="bg-purple text-white p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:text-[#FFC72C]"
+          className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
 
         >
           Save Chat
