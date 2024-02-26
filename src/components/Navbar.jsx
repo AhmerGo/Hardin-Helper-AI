@@ -6,7 +6,7 @@ function Navbar() {
       <div className="container mx-auto flex justify-center">
         <a
           href="/"
-          className="font-semibold text-white hover:text-[#FFC72C] mx-4 lg:mx-10 transition duration-300 transform hover:-translate-y-1"
+          className="font-semibold text-white hover:text-gold mx-4 lg:mx-10 transition duration-300 transform hover:-translate-y-1"
         >
           Home
         </a>
