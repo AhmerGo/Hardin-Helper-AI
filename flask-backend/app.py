@@ -6,28 +6,15 @@ from langchain_community.llms import GPT4All
 from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
 
+# Modify the system path to be able to import HSU from a different directory
+import sys
+sys.path.insert(1, '../LLM/')  # Add the directory above to the sys.path
+from HSU import HSU  # Now you can import the HSU class
+
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
 
-# Assuming you've set up your HSU class as provided
-class HSU:
-    @staticmethod
-    def rag(question):
-        model_path = "./Models/mistral-7b-openorca.Q4_0.gguf"
-        index_path = "./HSU_index"
-        embeddings = LlamaCppEmbeddings(model_path=model_path)
-        index = FAISS.load_local(index_path, embeddings)
-        llm = GPT4All(model=model_path)
-        qa = ConversationalRetrievalChain.from_llm(
-            llm=llm,
-            retriever=index.as_retriever(),
-            chain_type="stuff",
-            verbose=True,
-            max_tokens_limit=1000,
-        )
-        chat_history = []
-        result = qa({"question": question, "chat_history": chat_history})
-        return result
+# The HSU class is now imported from "../LLM/HSU.py", so we don't define it here
 
 # Instantiate your HSU class
 hsu = HSU()
