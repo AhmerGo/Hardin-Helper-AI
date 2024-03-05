@@ -7,6 +7,9 @@ module.exports = {
         purple: "#581483",
         gold: "#FFC72C",
       },
+      backgroundImage: {
+        hsu: "url('assets/HSU.png')",
+      },
     },
   },
   variants: {
