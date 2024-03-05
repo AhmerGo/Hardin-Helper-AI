@@ -44,12 +44,17 @@ def chat():
 
 #Database interaction
 #initiate connection
-db_connection = Connection()
-db_connection.connect("admin", "Stevencantremember", "admin")
+#db_connection = Connection()
+#db_connection.connect("admin", "Stevencantremember", "admin")
 
 @app.route('/find_users', methods=['GET'])
 def find_users():
+    db_connection = Connection()
+    db_connection.connect("admin", "Stevencantremember", "admin")
+
     users = db_connection.read("chatbot", "users")
+
+    db_connection.close()
 
     if users:
         return jsonify({'users': users}), 200
