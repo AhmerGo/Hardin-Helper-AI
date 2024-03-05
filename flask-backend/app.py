@@ -9,15 +9,13 @@ from langchain.chains import ConversationalRetrievalChain
 # Modify the system path to be able to import HSU from a different directory
 import sys
 sys.path.insert(1, '../LLM/')  # Add the directory above to the sys.path
-from HSU import HSU  # Now you can import the HSU class
+from HSU import rag  # Now you can import the HSU class
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
 
 # The HSU class is now imported from "../LLM/HSU.py", so we don't define it here
 
-# Instantiate your HSU class
-hsu = HSU()
 
 @app.route('/')
 def index():
@@ -33,8 +31,10 @@ def chat():
             return jsonify({'error': 'No user_input provided'}), 400
 
         # Use the HSU class for response generation
-        output = hsu.rag(user_input)
-        return jsonify({'reply': output})
+        output = rag(user_input)
+        test = output.get('answer')
+
+        return jsonify({'reply': test})
     except Exception as e:
         print(e)  # For development only, use logging in production
         return jsonify({'error': 'Internal Server Error'}), 500
