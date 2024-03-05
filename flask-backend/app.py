@@ -1,38 +1,43 @@
-from flask import Flask, request, jsonify, render_template, url_for
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-from gpt4all import GPT4All
+# Import your newly required modules
+from langchain_community.embeddings import LlamaCppEmbeddings
+from langchain_community.llms import GPT4All
+from langchain.vectorstores.faiss import FAISS
+from langchain.chains import ConversationalRetrievalChain
 
+# Modify the system path to be able to import HSU from a different directory
+import sys
+sys.path.insert(1, '../LLM/')  # Add the directory above to the sys.path
+from HSU import HSU  # Now you can import the HSU class
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
 
-model = GPT4All("orca-mini-3b-gguf2-q4_0.gguf")
+# The HSU class is now imported from "../LLM/HSU.py", so we don't define it here
 
-
+# Instantiate your HSU class
+hsu = HSU()
 
 @app.route('/')
 def index():
     return jsonify({'message': 'API is running'})
 
-
 @app.route('/chat', methods=['POST'])
 def chat():
     try:
         data = request.get_json()
-        user_input = data.get('user_input')  # Using .get is safer
+        user_input = data.get('user_input')
 
         if not user_input:
             return jsonify({'error': 'No user_input provided'}), 400
 
-        output = model.generate(prompt=user_input, max_tokens=100)
+        # Use the HSU class for response generation
+        output = hsu.rag(user_input)
         return jsonify({'reply': output})
     except Exception as e:
-        # Log the error and return a generic error message
         print(e)  # For development only, use logging in production
         return jsonify({'error': 'Internal Server Error'}), 500
-
-#u_in = input("Enter something: ")
-#chat(u_in)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
