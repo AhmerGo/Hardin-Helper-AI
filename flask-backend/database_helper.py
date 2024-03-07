@@ -46,6 +46,17 @@ class Connection(object):
             print(document)
 
     """
+    Inserts a new document into the specified collection.
+    @param db_name: Name of the MongoDB database to access (String)
+    @param collection_name: Name of the MongoDB collection to access (String)
+    @param document: Document to be inserted into the collection (Dictionary)
+    """
+    def create(self, db_name, collection_name, document):
+        db = self.client[db_name]
+        collection = db[collection_name]
+        collection.insert_one(document)
+    """
+
     Inserts one user into the user table after checking for duplicates
     @param name: Name of user (String)
     @param email: Email of user (String)
