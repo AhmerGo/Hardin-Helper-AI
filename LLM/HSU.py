@@ -1,16 +1,11 @@
-import os
-from langchain_community.embeddings import LlamaCppEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.chains import ConversationalRetrievalChain
-from langchain.llms import GPT4All
+
 
 class HSU:
     @staticmethod
     def rag(question):
         
-        app_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(app_dir, "../LLM/Models/mistral-7b-openorca.Q4_0.gguf")
-        index_path = os.path.join(app_dir, "../LLM/HSU_index")
+        model_path = "../LLM/Models/mistral-7b-openorca.Q4_0.gguf"
+        index_path = "../LLM/HSU_index"
         
         embeddings = LlamaCppEmbeddings(model_path=model_path)
         index = FAISS.load_local(index_path, embeddings)
