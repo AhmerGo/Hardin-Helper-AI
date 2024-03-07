@@ -58,10 +58,13 @@ def save_chat():
         bot_inputs = data.get('bot_inputs')
 
         if not user_inputs or not bot_inputs:
+            logging.warning('User inputs or bot inputs missing')
             return jsonify({'error': 'User inputs or bot inputs missing'}), 400
 
         db_connection = Connection()
         db_connection.connect("admin", "Stevencantremember", "admin")
+
+        logging.info('Saving chat data')
 
         # Save user inputs
         for user_input in user_inputs:
@@ -79,8 +82,10 @@ def save_chat():
 
         db_connection.close()
 
+        logging.info('Chat saved successfully')
         return jsonify({'message': 'Chat saved successfully'}), 200
     except Exception as e:
+        logging.error(f'Failed to save chat: {e}', exc_info=True)
         return jsonify({'error': 'Failed to save chat'}), 500
 
 
