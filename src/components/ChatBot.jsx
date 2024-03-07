@@ -139,6 +139,11 @@ function ChatBot() {
                 >
                 Clear Chat
               </button>
+              <button onClick={saveChat}
+                className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
+                >
+                Save Chat
+              </button>
             </div>
           </div>
       </div>
