@@ -8,8 +8,7 @@ function Header() {
       className="header bg-white text-purple-600 flex items-center" // Flex applied here
       style={{ height: "100px" }}
     >
-      <div className="container mx-auto flex items-center justify-evenly"
->
+      <div className="container mx-auto flex items-center justify-evenly">
         <img
           src={logoTwo}
           alt="Hardin-Simmons Logo"
