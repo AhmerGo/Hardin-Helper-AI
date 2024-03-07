@@ -104,7 +104,7 @@ function ChatBot() {
                   <br />
                 </div>
               ))}
-              <div id="loading" class="text-right rtl:text-right hidden">
+              <div id="loading" className="text-right rtl:text-right hidden">
                   <div role="status">
                     HossBot is typing...
                   </div>
