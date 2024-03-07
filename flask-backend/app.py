@@ -50,18 +50,38 @@ def chat():
 #db_connection = Connection()
 #db_connection.connect("admin", "Stevencantremember", "admin")
 
-@app.route('/find_users', methods=['GET'])
-def find_users():
-    db_connection = Connection()
-    db_connection.connect("admin", "Stevencantremember", "admin")
+@app.route('/save_chat', methods=['POST'])
+def save_chat():
+    try:
+        data = request.get_json()
+        user_inputs = data.get('user_inputs')
+        bot_inputs = data.get('bot_inputs')
 
-    users = db_connection.read("chatbot", "users")
+        if not user_inputs or not bot_inputs:
+            return jsonify({'error': 'User inputs or bot inputs missing'}), 400
 
-    db_connection.close()
+        db_connection = Connection()
+        db_connection.connect("admin", "Stevencantremember", "admin")
 
-    if users:
-        return jsonify({'users': users}), 200
-    return jsonify({'error': 'User not found'}), 404
+        # Save user inputs
+        for user_input in user_inputs:
+            db_connection.create("chatbot", "user_inputs", {
+                "user_id": "user_id",  # Replace with appropriate user ID
+                "message": user_input
+            })
+
+        # Save bot inputs
+        for bot_input in bot_inputs:
+            db_connection.create("chatbot", "bot_inputs", {
+                "user_id": "user_id",  # Replace with appropriate user ID
+                "message": bot_input
+            })
+
+        db_connection.close()
+
+        return jsonify({'message': 'Chat saved successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': 'Failed to save chat'}), 500
 
 
 if __name__ == '__main__':

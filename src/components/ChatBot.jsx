@@ -62,12 +62,35 @@ function ChatBot() {
   }
 
   function saveChat() {
-    const userInputs = document.querySelectorAll(".message.user");
-    const botInputs = document.querySelectorAll(".message.bot");
-    Array.from(userInputs).forEach(function (input) {
-      // Replace this wit database stuff later and include another function for bot inputs
-      alert(input.textContent);
-    });
+    const userInputs = Array.from(
+      document.querySelectorAll(".message.user")
+    ).map((input) => input.textContent);
+    const botInputs = Array.from(document.querySelectorAll(".message.bot")).map(
+      (input) => input.textContent
+    );
+
+    fetch("http://localhost:5000/save_chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user_inputs: userInputs,
+        bot_inputs: botInputs,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Chat saved successfully:", data);
+      })
+      .catch((error) => {
+        console.error("Failed to save chat:", error);
+      });
   }
 
   return (
