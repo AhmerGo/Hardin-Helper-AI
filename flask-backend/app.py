@@ -13,7 +13,7 @@ import logging
 # Modify the system path to be able to import HSU from a different directory
 import sys
 sys.path.insert(1, '../LLM/')  # Add the directory above to the sys.path
-from HSU import rag  # Now you can import the HSU class
+from HSU import HSU  # Now you can import the HSU class
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
