@@ -1,7 +1,6 @@
 
 
 class HSU:
-    @staticmethod
     def rag(question):
         
         model_path = "../LLM/Models/mistral-7b-openorca.Q4_0.gguf"
