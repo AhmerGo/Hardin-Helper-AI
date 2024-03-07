@@ -3,10 +3,13 @@ from langchain_community.llms import GPT4All
 from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
 import torch
+import os
+
 
 # Constants
-model_path = "../LLM/Models/mistral-7b-openorca.Q4_0.gguf"
-index_path = "../LLM/HSU_index"
+app_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(app_dir, "../LLM/Models/mistral-7b-openorca.Q4_0.gguf")
+index_path = os.path.join(app_dir, "../LLM/HSU_index")
 
 
 # Functions
