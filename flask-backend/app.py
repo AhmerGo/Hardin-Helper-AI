@@ -6,6 +6,8 @@ from langchain_community.llms import GPT4All
 from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from database_helper import Connection
+import logging
+
 
 
 # Modify the system path to be able to import HSU from a different directory
@@ -31,15 +33,18 @@ def chat():
         user_input = data.get('user_input')
 
         if not user_input:
+            logging.warning("User input is missing")
             return jsonify({'error': 'No user_input provided'}), 400
-
+        
         # Use the HSU class for response generation
         output = HSU.rag(user_input)
         test = output.get('answer')
-
+        logging.info(f"Generated response: {test}")
         return jsonify({'reply': test})
+
     except Exception as e:
-        print(e)  # For development only, use logging in production
+        logging.exception(f"An error occurred during chat processing: {e}")
+        
         return jsonify({'error': 'Internal Server Error'}), 500
 
 #Database interaction
