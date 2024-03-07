@@ -37,7 +37,7 @@ def chat():
             return jsonify({'error': 'No user_input provided'}), 400
         
         # Use the HSU class for response generation
-        output = rag(user_input)
+        output = HSU.rag(user_input)
         test = output.get('answer')
         logging.info(f"Generated response: {test}")
         return jsonify({'reply': test})
