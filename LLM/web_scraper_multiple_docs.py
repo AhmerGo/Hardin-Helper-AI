@@ -43,21 +43,10 @@ def save_to_text_file(text, title, url, base_dir='./Dataset'):
 
 
 def main():
-    urls = [
-        'https://www.hsutx.edu/admissions/first-time/admission-requirements-first-time-freshmen/',
-        'https://www.hsutx.edu/admissions/first-time/',
-        'https://www.hsutx.edu/admissions/first-time/test-optional-super-scoring-admissions/',
-        'https://www.hsutx.edu/admissions/first-time/application-checklist/',
-        'https://www.hsutx.edu/admissions/first-time/i-got-in-now-what/',
-        'https://www.hsutx.edu/about-hsu/mission-vision-statement-of-faith/',
-        'https://www.hsutx.edu/about-hsu/the-hsu-difference/hsu-at-a-glance/',
-        'https://www.hsutx.edu/about-hsu/the-hsu-difference/history/',
-        'https://www.hsutx.edu/about-hsu/the-hsu-difference/hsu-traditions/',
-        'https://www.hsutx.edu/about-hsu/the-hsu-difference/hsu-traditions/the-six-white-horses/',
-        'https://www.hsutx.edu/about-hsu/the-hsu-difference/hsu-traditions/cowboy-band/',
-        'https://www.hsutx.edu/christlieb/'
+    urls_file = "Website_URLS/website_urls.txt"
 
-    ]
+    with open(urls_file, 'r', encoding='utf-8') as f:
+        urls = [line.strip() for line in f.readlines()]
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -65,8 +54,6 @@ def main():
     }
 
     session = requests.Session()
-
-    # output_filename = './Dataset/HSU_QA_Pairs.txt'
 
     for url in urls:
         print(f"Scraping {url}")
