@@ -4,8 +4,8 @@ from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
 
 # Constants
-model_path = "./Models/mistral-7b-openorca.Q4_0.gguf"
-index_path = "./HSU_index"
+model_path = "../LLM/Models/mistral-7b-openorca.Q4_0.gguf"
+index_path = "../LLM/HSU_index"
 
 
 # Functions

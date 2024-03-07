@@ -7,8 +7,8 @@ from langchain.chains import ConversationalRetrievalChain
 class HSU:
     @staticmethod
     def rag(question):
-        model_path = "./Models/mistral-7b-openorca.Q4_0.gguf"
-        index_path = "./HSU_index"
+        model_path = "../LLM/Models/mistral-7b-openorca.Q4_0.gguf"
+        index_path = "../LLM/HSU_index"
         embeddings = LlamaCppEmbeddings(model_path=model_path)
         index = FAISS.load_local(index_path, embeddings)
         llm = GPT4All(model=model_path)
