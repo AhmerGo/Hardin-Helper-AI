@@ -104,7 +104,7 @@ function ChatBot() {
                   <br />
                 </div>
               ))}
-              <div id="loading" class="text-right rtl:text-right hidden">
+              <div id="loading" className="text-right rtl:text-right hidden">
                   <div role="status">
                     HossBot is typing...
                   </div>
@@ -138,6 +138,11 @@ function ChatBot() {
                 className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
                 >
                 Clear Chat
+              </button>
+              <button onClick={saveChat}
+                className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
+                >
+                Save Chat
               </button>
             </div>
           </div>
