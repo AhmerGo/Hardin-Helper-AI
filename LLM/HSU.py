@@ -2,7 +2,6 @@ from langchain_community.embeddings import LlamaCppEmbeddings
 from langchain_community.llms import GPT4All
 from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
-import torch
 
 
 
