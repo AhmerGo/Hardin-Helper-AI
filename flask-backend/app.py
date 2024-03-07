@@ -13,7 +13,7 @@ import logging
 # Modify the system path to be able to import HSU from a different directory
 import sys
 sys.path.insert(1, '../LLM/')  # Add the directory above to the sys.path
-from HSU import rag  # Now you can import the HSU class
+from HSU import HSU  # Now you can import the HSU class
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
@@ -35,8 +35,8 @@ def chat():
             logging.warning("User input is missing")
             return jsonify({'error': 'No user_input provided'}), 400
 
-        # Use the rag function for response generation
-        output = rag(user_input)
+        # Use the HSU class for response generation
+        output = HSU.rag(user_input)
         test = output.get('answer')
         logging.info(f"Generated response: {test}")
         return jsonify({'reply': test})
