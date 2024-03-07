@@ -1,14 +1,13 @@
-from langchain_community.embeddings import LlamaCppEmbeddings
-from langchain_community.llms import GPT4All
-from langchain.vectorstores.faiss import FAISS
-from langchain.chains import ConversationalRetrievalChain
-
+import os
 
 class HSU:
     @staticmethod
     def rag(question):
-        model_path = "./Models/mistral-7b-openorca.Q4_0.gguf"
-        index_path = "./HSU_index"
+        
+        app_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(app_dir, "../LLM/Models/mistral-7b-openorca.Q4_0.gguf")
+        index_path = os.path.join(app_dir, "../LLM/HSU_index")
+        
         embeddings = LlamaCppEmbeddings(model_path=model_path)
         index = FAISS.load_local(index_path, embeddings)
         llm = GPT4All(model=model_path)
@@ -19,7 +18,6 @@ class HSU:
             verbose=True,
             max_tokens_limit=1000,
         )
-
         # Chatbot loop
         chat_history = []
         result = qa({"question": question, "chat_history": chat_history})

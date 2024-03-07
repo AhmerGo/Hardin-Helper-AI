@@ -6,6 +6,11 @@ venv
 /.pnp
 .pnp.js
 ../flask_backend/.venv
+**/__pycache__
+**/__pycache__/
+
+
+__pycache__
 
 # testing
 /coverage
@@ -23,3 +28,5 @@ venv
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.idea

@@ -2,10 +2,14 @@ from langchain_community.embeddings import LlamaCppEmbeddings
 from langchain_community.llms import GPT4All
 from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
+import torch
+import os
+
 
 # Constants
-model_path = "./Models/mistral-7b-openorca.Q4_0.gguf"
-index_path = "./HSU_index"
+app_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(app_dir, "../LLM/Models/mistral-7b-openorca.Q4_0.gguf")
+index_path = os.path.join(app_dir, "../LLM/HSU_index")
 
 
 # Functions
@@ -15,7 +19,9 @@ def initialize_embeddings() -> LlamaCppEmbeddings:
 
 def main():
     # Main execution
-    llm = GPT4All(model=model_path)
+    device = "gpu" if torch.cuda.is_available() else "cpu"
+    print(f"Using device: {device}")
+    llm = GPT4All(model=model_path, device=device)
     embeddings = initialize_embeddings()
     index = FAISS.load_local(index_path, embeddings)
 

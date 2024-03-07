@@ -56,11 +56,10 @@ function ChatBot() {
     });
   }
 
-  function clearInput(){
+  function clearInput() {
     let input = document.getElementById("input-box");
     input.value = "";
   }
-
 
   function saveChat() {
     const userInputs = document.querySelectorAll(".message.user");
@@ -71,9 +70,8 @@ function ChatBot() {
     });
   }
 
-
-
   return (
+
       <div className="chat-section relative  flex flex-col h-96 bg-purple rounded-xl shadow-2xl p-6 ">
         <div className="flex-grow overflow-auto mb-4 p-4 bg-white rounded-xl shadow-inner" id="chatHistory">
           {chatHistory.map((chat, index) => (
@@ -129,6 +127,7 @@ function ChatBot() {
           </button>
         </div>
         </div>
+
   );
 }
 
