@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import logo from "../assets/logoo.svg"; // Path to the logo image
 function ChatBot() {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
@@ -13,7 +13,7 @@ function ChatBot() {
     // Update chat history with the new message
     const newMessage = { text: message, sender: "user" };
     setChatHistory([...chatHistory, newMessage]);
-
+    scrollToBottom();
     setMessage("");
     document.getElementById("loading").classList.remove("hidden");
     try {
@@ -41,6 +41,7 @@ function ChatBot() {
         { text: responseData.reply, sender: "bot" },
       ]);
       document.getElementById("loading").classList.add("hidden");
+      scrollToBottom();
     } catch (error) {
       console.error("Failed to send message:", error);
       // Optionally handle the error in UI
@@ -59,6 +60,13 @@ function ChatBot() {
   function clearInput() {
     let input = document.getElementById("input-box");
     input.value = "";
+  }
+
+  let history = document.getElementById("chatHistory");
+  function scrollToBottom(element){
+    requestAnimationFrame(() => {
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+  });
   }
 
   function saveChat() {
@@ -97,10 +105,25 @@ function ChatBot() {
 
       <div className="w-full flex justify-center items-center bg-hsu bg-center bg-no-repeat h-screen">
         <div className="chat-section w-3/4 relative  flex flex-col h-96 bg-purple rounded-xl shadow-2xl p-6 ">
+          <div className="w-full flex justify-between mb-6">
+            <div className="w-1/4 bg-white rounded">
+              <a href="https://www.hsutx.edu/">
+              <img src={logo} alt="" />
+              </a>
+            </div>
+            <div className="self-end">
+              <button onClick={clearChat}
+                className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
+                >
+                Clear Chat
+              </button>
+            </div>
+          </div>
             <div className="flex-grow overflow-auto mb-4 p-4 bg-white rounded-xl shadow-inner" id="chatHistory">
               {chatHistory.map((chat, index) => (
-                <div key={index} className={`message ${chat.sender}`}>
-                  {chat.sender}:{chat.text}
+                <div key={index} className={`message ${chat.sender ==='user' ? 'rounded-r-lg': 'rounded-l-lg ml-auto'} rounded-b-lg  bg-gold text-purple w-fit flex`}>
+                  {chat.sender}: <br />
+                  {chat.text}
                   <br />
                 </div>
               ))}
@@ -134,11 +157,6 @@ function ChatBot() {
               </button>
             </div>
             <div className="flex justify-evenly my-2.5">
-              <button onClick={clearChat}
-                className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
-                >
-                Clear Chat
-              </button>
               <button onClick={saveChat}
                 className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
                 >
