@@ -7,7 +7,8 @@ from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from database_helper import Connection
 import logging
-
+from bson import json_util
+import json
 
 
 # Modify the system path to be able to import HSU from a different directory
@@ -88,6 +89,28 @@ def save_chat():
         logging.error(f'Failed to save chat: {e}', exc_info=True)
         return jsonify({'error': 'Failed to save chat'}), 500
 
+
+#Method for Admin page to see users
+#Will find all users from database and return Json results
+@app.route('/find_users', methods=['GET'])
+def find_users():
+    db_connection = Connection()
+    db_connection.connect("admin", "Stevencantremember", "admin")
+    
+    with app.app_context():
+        users = db_connection.read("chatbot", "users")
+        #returns list [] with results need to jsonify this
+        #print(f'api end users: {users}')
+
+        db_connection.close()
+
+        if users:
+            # below line fixes object_id so it can be processed
+            users_json = json_util.dumps(users)
+            #loads gets rid of \\ in front of every variable
+            parsed_data = json.loads(users_json)
+            return jsonify({'users': parsed_data})
+        return jsonify({'error': 'User not found'}), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

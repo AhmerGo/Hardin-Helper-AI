@@ -43,8 +43,13 @@ class Connection(object):
         db = self.client[db_choice]
         collection = db[collection_choice]
         result = collection.find({})
+
+        t = []
         for document in result:
-            print(document)
+            #print(document)
+            t.append(document)
+        
+        return t
 
     """
     Inserts one user into the user table after checking for duplicates
