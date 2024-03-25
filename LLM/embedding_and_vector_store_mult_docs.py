@@ -8,14 +8,15 @@ from langchain.vectorstores.faiss import FAISS
 
 
 # Setup
-llama_path = '../LLM/Models/mistral-7b-openorca.Q4_0.gguf'
+llama_path = './Models/wizardlm-13b-v1.2.Q4_0.gguf'
+# llama_path = './Models/mistral-7b-openorca.Q4_0.gguf'
 
 callback_manager = BaseCallbackManager([StreamingStdOutCallbackHandler()])
 loader = DirectoryLoader('./Dataset', show_progress=True)
 
 embeddings = LlamaCppEmbeddings(
     model_path=llama_path,
-    n_gpu_layers=30,
+    n_gpu_layers=41,   # Need more context, different models have different num of layers, load entire model into GPU if it fits
     n_ctx=int(32768),  # Need to use the same context size as the model
     verbose=True,
 )
@@ -24,9 +25,9 @@ embeddings = LlamaCppEmbeddings(
 # Split text
 def split_chunks(sources):
     chunks = []
-    splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=150)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=575, chunk_overlap=58)
     for chunk in splitter.split_documents(sources):
-        print(chunk)
+        # print(chunk)
         chunks.append(chunk)
     return chunks
 
