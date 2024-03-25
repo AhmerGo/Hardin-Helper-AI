@@ -50,45 +50,31 @@ def chat():
 #initiate connection
 #db_connection = Connection()
 #db_connection.connect("admin", "Stevencantremember", "admin")
-
 @app.route('/save_chat', methods=['POST'])
 def save_chat():
+    data = request.get_json()
+    user_inputs = data.get('user_inputs', [])
+    bot_inputs = data.get('bot_inputs', [])
+
+    if not user_inputs or not bot_inputs:
+        return jsonify({'error': 'Missing required parameters'}), 400
+
     try:
-        data = request.get_json()
-        user_inputs = data.get('user_inputs')
-        bot_inputs = data.get('bot_inputs')
+        connection = Connection()
+        chat_log = ''
+        for user_input, bot_input in zip(user_inputs, bot_inputs):
+            chat_log += f'User: {user_input}\nBot: {bot_input}\n\n'
 
-        if not user_inputs or not bot_inputs:
-            logging.warning('User inputs or bot inputs missing')
-            return jsonify({'error': 'User inputs or bot inputs missing'}), 400
+        user_id = 1  # Replace with the actual user ID
+        response_flag_1 = 0  # Replace with the actual flag values
+        response_flag_2 = 0
+        response_flag_3 = 0
+        save_flag = 1
 
-        db_connection = Connection()
-        db_connection.connect("admin", "Stevencantremember", "admin")
-
-        logging.info('Saving chat data')
-
-        # Save user inputs
-        for user_input in user_inputs:
-            db_connection.create("chatbot", "user_inputs", {
-                "user_id": "user_id",  # Replace with appropriate user ID
-                "message": user_input
-            })
-
-        # Save bot inputs
-        for bot_input in bot_inputs:
-            db_connection.create("chatbot", "bot_inputs", {
-                "user_id": "user_id",  # Replace with appropriate user ID
-                "message": bot_input
-            })
-
-        db_connection.close()
-
-        logging.info('Chat saved successfully')
-        return jsonify({'message': 'Chat saved successfully'}), 200
+        connection.insert_chat_log(user_id, chat_log, response_flag_1, response_flag_2, response_flag_3, save_flag)
+        return jsonify({'message': 'Chat log saved successfully'}), 200
     except Exception as e:
-        logging.error(f'Failed to save chat: {e}', exc_info=True)
-        return jsonify({'error': 'Failed to save chat'}), 500
-
+        return jsonify({'error': str(e)}), 500
 
 #Method for Admin page to see users
 #Will find all users from database and return Json results
