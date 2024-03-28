@@ -15,7 +15,7 @@ logging.basicConfig(filename='chatbot.log', level=logging.DEBUG, format='%(ascti
 
 # Functions
 def initialize_embeddings() -> LlamaCppEmbeddings:
-    return LlamaCppEmbeddings(model_path=model_path)
+    return LlamaCppEmbeddings(model_path=model_path, device=device)
 
 
 def main():
@@ -24,7 +24,7 @@ def main():
     # device = "gpu" if torch.cuda.is_available() else "cpu"
     device = "gpu"
     print(f"Using device: {device}")
-    llm = GPT4All(model=model_path, device=device)
+    llm = GPT4All(model=model_path,  n_gpu_layers=20, device=device)
     # try:
     #     llm = GPT4All(model=model_path, device=device)
     # except Exception as e:
