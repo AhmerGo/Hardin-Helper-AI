@@ -5,6 +5,7 @@ from langchain.chains import ConversationalRetrievalChain
 
 
 class HSU:
+    @staticmethod
     def rag(question):
         model_path = "../LLM/Models/wizardlm-13b-v1.2.Q4_0.gguf"
         index_path = "../LLM/HSU_index"
