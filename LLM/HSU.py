@@ -17,8 +17,10 @@ class HSU:
             retriever=index.as_retriever(),
             chain_type="stuff",
             verbose=True,
-            max_tokens_limit=1000,
+            max_tokens_limit=10000,
+            pooling_type='mean'  # Hypothetical parameter
         )
+
 
         # Chatbot loop
         chat_history = []

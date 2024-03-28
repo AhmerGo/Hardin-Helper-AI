@@ -39,6 +39,8 @@ def main():
         chain_type="stuff",
         verbose=True,
         max_tokens_limit=10000,
+        pooling_type='mean'  # Hypothetical parameter
+
     )
 
     # Chatbot loop
