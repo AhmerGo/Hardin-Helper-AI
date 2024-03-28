@@ -15,7 +15,7 @@ logging.basicConfig(filename='chatbot.log', level=logging.DEBUG, format='%(ascti
 
 # Functions
 def initialize_embeddings() -> LlamaCppEmbeddings:
-    return LlamaCppEmbeddings(model_path=model_path)
+    return LlamaCppEmbeddings(model_path=model_path, pooling_type='mean')
 
 
 def main():
@@ -39,8 +39,6 @@ def main():
         chain_type="stuff",
         verbose=True,
         max_tokens_limit=10000,
-        pooling_type='mean'  # Hypothetical parameter
-
     )
 
     # Chatbot loop
