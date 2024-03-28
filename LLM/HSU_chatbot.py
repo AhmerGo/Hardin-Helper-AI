@@ -7,8 +7,8 @@ import torch
 
 # Constants
 # model_path = "./Models/mistral-7b-openorca.Q4_0.gguf"
-model_path = "./Models/wizardlm-13b-v1.2.Q4_0.gguf"
-index_path = "./HSU_index"
+model_path = "../LLM/Models/wizardlm-13b-v1.2.Q4_0.gguf"
+index_path = "../LLM/HSU_index"
 
 logging.basicConfig(filename='chatbot.log', level=logging.DEBUG, format='%(asctime)s : %(levelname)s : %(message)s')
 
