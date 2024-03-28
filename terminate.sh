@@ -8,6 +8,8 @@ if [ -n "$flask_pid" ]; then
 else
   echo "No running Flask process found on port 5000."
 fi
+  kill "$flask_pid"
+
 
 
 # Find the PID of the Node.js process running on port 3000
