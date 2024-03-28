@@ -46,7 +46,14 @@ sitemap_url = 'https://www.hsutx.edu/sitemap_index.xml'
 urls = fetch_sitemap_urls(sitemap_url)
 
 # Specify the keywords for filtering URLs related to admissions and housing
-keywords = ['admissions', 'housing']
+keywords = ['admissions',
+            'housing',
+            'graduate-programs',
+            # 'grad-degree',
+            'financial-aid',
+            # 'academics',
+            # 'fasttrack'
+]
 
 # Filter URLs
 filtered_urls = filter_urls(urls, keywords)
