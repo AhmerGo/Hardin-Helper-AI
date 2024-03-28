@@ -5,7 +5,7 @@ from bson.objectid import ObjectId
 Helper file for HossBot MongoDB database operations.
 
 @author: Steven Barnas
-@version: March 28, 2024
+@version: March 28, 2024 
 """
 
 class Connection(object):
