@@ -15,7 +15,7 @@ logging.basicConfig(filename='chatbot.log', level=logging.DEBUG, format='%(ascti
 
 # Functions
 def initialize_embeddings() -> LlamaCppEmbeddings:
-    return LlamaCppEmbeddings(model_path=model_path)
+    return LlamaCppEmbeddings(model_path=model_path, pooling="mean")
 
 
 def main():
