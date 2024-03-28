@@ -1,25 +1,29 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-# Import your newly required modules
+# Assume these are valid imports in your project context
 from langchain_community.embeddings import LlamaCppEmbeddings
 from langchain_community.llms import GPT4All
 from langchain.vectorstores.faiss import FAISS
 import logging
 from bson import json_util
 import json
-
-
-# Modify the system path to be able to import HSU from a different directory
 import sys
+
 sys.path.insert(1, '../LLM/')  # Add the directory above to the sys.path
 from HSU import HSU  # Import the HSU class
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG,  # Minimum log level to capture
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',  # Log format
+                    filename='app.log',  # Log file path (comment this line if logging to stdout)
+                    filemode='a')  # Append mode for the log file
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
 
-
 @app.route('/')
 def index():
+    logging.debug("Index route accessed")  # Example of debug log
     return jsonify({'message': 'API is running'})
 
 @app.route('/chat', methods=['POST'])
@@ -33,13 +37,11 @@ def chat():
         # Use the HSU class for response generation
         output = HSU.rag(user_input)
         test = output.get('answer')
-        logging.info(f"Generated response: {test}")
+        logging.info(f"Generated response: {test}")  # Example of info log
         return jsonify({'reply': test})
     except Exception as e:
-        logging.exception(f"An error occurred during chat processing: {e}")
+        logging.error(f"An error occurred during chat processing: {e}", exc_info=True)  # Log error with traceback
         return jsonify({'error': 'Internal Server Error'}), 500
-
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
