@@ -10,7 +10,7 @@ class HSU:
         model_path = "../LLM/Models/wizardlm-13b-v1.2.Q4_0.gguf"
         index_path = "../LLM/HSU_index"
         embeddings = LlamaCppEmbeddings(model_path=model_path)
-        index = FAISS.load_local(index_path, embeddings)
+        index = FAISS.load_local(index_path, embeddings, allow_dangerous_deserialization=True)
         llm = GPT4All(model=model_path, device='gpu')
         qa = ConversationalRetrievalChain.from_llm(
             llm=llm,
