@@ -9,7 +9,7 @@ class HSU:
     def rag(question):
         model_path = "./Models/wizardlm-13b-v1.2.Q4_0.gguf"
         index_path = "./HSU_index"
-        embeddings = LlamaCppEmbeddings(model_path=model_path, pooling="mean")
+        embeddings = LlamaCppEmbeddings(model_path=model_path)
         index = FAISS.load_local(index_path, embeddings)
         llm = GPT4All(model=model_path, device='gpu')
         qa = ConversationalRetrievalChain.from_llm(
