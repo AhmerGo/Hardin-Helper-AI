@@ -7,14 +7,6 @@ node_pid=$(lsof -t -i :3000)
 echo "Node.js PID: $node_pid"
 echo "Flask PID: $flask_pid"
 
-if [ -n "$flask_pid" ]; then
-  kill "$flask_pid"
-  echo "Flask process running on port 5000 (PID: $flask_pid) has been terminated."
-else
-  echo "No running Flask process found on port 5000."
-fi
-
-
 # Check if the Node.js process is running
 if [ -n "$node_pid" ]; then
   # Kill the Node.js process
@@ -23,3 +15,12 @@ if [ -n "$node_pid" ]; then
 else
   echo "No running Node.js process found on port 3000."
 fi
+
+
+if [ -n "$flask_pid" ]; then
+  kill "$flask_pid"
+  echo "Flask process running on port 5000 (PID: $flask_pid) has been terminated."
+else
+  echo "No running Flask process found on port 5000."
+fi
+
