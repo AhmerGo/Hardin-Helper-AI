@@ -5,9 +5,8 @@ from bson.objectid import ObjectId
 Helper file for HossBot MongoDB database operations.
 
 @author: Steven Barnas
-@version: March 19, 2024
+@version: March 28, 2024
 """
-
 
 class Connection(object):
 
@@ -215,12 +214,12 @@ class Connection(object):
         # Close the connection
         self.client.close()
 
-# test = Connection()
-# Connection.connect(test, "admin", "Stevencantremember", "admin")
+test = Connection()
+Connection.connect(test, "admin", "Stevencantremember", "admin")
 # Connection.insert_users(test, 2, "Steven Barnas", "steven@hsutx.edu")
 # Connection.insert_links(test, "www.hsutx.edu")
 # Connection.update_tally(test, "www.hsutx.edu")
-# Connection.read(test,"chatbot", "users")
+Connection.read(test,"chatbot", "users")
 # Connection.read(test,"chatbot", "links")
 # Connection.delete_chat_log(test, '65d7863a3a91bedf9928cf8f')
 # Connection.read(test,"chatbot", "chatlog")
