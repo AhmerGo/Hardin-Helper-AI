@@ -23,7 +23,7 @@ def main():
     # device = "gpu" if torch.cuda.is_available() else "cpu"
     device = "gpu"
     print(f"Using device: {device}")
-    llm = GPT4All(model=model_path,  n_gpu_layers=20, device=device)
+    llm = GPT4All(model=model_path, device=device)
     # try:
     #     llm = GPT4All(model=model_path, device=device)
     # except Exception as e:
