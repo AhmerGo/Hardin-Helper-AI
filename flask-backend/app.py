@@ -9,6 +9,7 @@ from database_helper import Connection
 import logging
 from bson import json_util
 import json
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Modify the system path to be able to import HSU from a different directory
 import sys
@@ -27,6 +28,8 @@ def index():
 @app.route('/chat', methods=['POST'])
 def chat():
     try:
+        logging.info("Received request at /chat endpoint")
+
         data = request.get_json()
         user_input = data.get('user_input')
         if not user_input:

@@ -7,14 +7,13 @@ from langchain.chains import ConversationalRetrievalChain
 
 
 class HSU:
-    logging.basicConfig(filename='chatbot.log', level=logging.DEBUG, format='%(asctime)s : %(levelname)s : %(message)s')
 
     @staticmethod
     def rag(question):
-        model_path = "./Models/wizardlm-13b-v1.2.Q4_0.gguf"
-        index_path = "./HSU_index"
+        model_path = "../LLM/Models/wizardlm-13b-v1.2.Q4_0.gguf"
+        index_path = "../LLM/HSU_index"
         embeddings = LlamaCppEmbeddings(model_path=model_path)
-        index = FAISS.load_local(index_path, embeddings)
+        index = FAISS.load_local(index_path, embeddings, allow_dangerous_deserialization=True)
         device = "gpu" if torch.cuda.is_available() else "cpu"
         try:
             llm = GPT4All(model=model_path, device=device)
