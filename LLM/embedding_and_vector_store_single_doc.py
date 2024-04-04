@@ -11,9 +11,9 @@ from langchain.vectorstores.faiss import FAISS
 
 
 # Setup
-llama_path = '../LLM/Models/mistral-7b-openorca.Q4_0.gguf'
+llama_path = './Models/mistral-7b-openorca.Q4_0.gguf'
 callback_manager = BaseCallbackManager([StreamingStdOutCallbackHandler()])
-loader = TextLoader('../LLM/Dataset/HSU_website_data.txt')
+loader = TextLoader('./Dataset/HSU_website_data.txt')
 embeddings = LlamaCppEmbeddings(
     model_path=llama_path,
     n_threads=max(multiprocessing.cpu_count() - 1, 1),

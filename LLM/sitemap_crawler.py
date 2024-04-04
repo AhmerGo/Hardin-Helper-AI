@@ -35,13 +35,33 @@ def fetch_sitemap_urls(sitemap_url):
     return urls
 
 
+def filter_urls(urls, keywords):
+    """Filter URLs to include only those containing specified keywords."""
+    filtered_urls = [url for url in urls if any(keyword in url.lower() for keyword in keywords)]
+    return filtered_urls
+
+
 # Example sitemap URL
 sitemap_url = 'https://www.hsutx.edu/sitemap_index.xml'
 urls = fetch_sitemap_urls(sitemap_url)
 
-website_urls = open('./Website_URLS/website_urls.txt', 'w+')
+# Specify the keywords for filtering URLs related to admissions and housing
+keywords = ['admissions',
+            'housing',
+            'graduate-programs',
+            # 'grad-degree',
+            'financial-aid',
+            # 'academics',
+            # 'fasttrack'
+]
 
-# print(len(urls))
+# Filter URLs
+filtered_urls = filter_urls(urls, keywords)
 
-for url in urls:
-    website_urls.write(url + '\n')
+# Write filtered URLs to a file
+with open('./Website_URLS/website_urls.txt', 'w+') as website_urls:
+    for url in filtered_urls:
+        website_urls.write(url + '\n')
+
+# Optionally, print the number of filtered URLs
+print(f"Number of filtered URLs: {len(filtered_urls)}")
