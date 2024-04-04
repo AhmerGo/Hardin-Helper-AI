@@ -46,7 +46,7 @@ def chat():
         logging.exception(f"An error occurred during chat processing: {e}")
         return jsonify({'error': 'Internal Server Error'}), 500
 
-"""
+
 @app.route('/save_chat', methods=['POST'])
 def save_chat():
     with app.app_context():
@@ -74,7 +74,7 @@ def save_chat():
             return jsonify({'message': 'Chat log saved successfully'}), 200
         except Exception as e:
             return jsonify({'error': str(e)}), 500
-"""
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
