@@ -8,7 +8,6 @@ import torch
 
 model_path = "./Models/wizardlm-13b-v1.2.Q4_0.gguf"
 index_path = "./HSU_index"
-
 logging.basicConfig(filename='chatbot.log', filemode='a', level=logging.INFO, format='%(asctime)s - %(name)s - %('
                                                                                      'levelname)s - %(message)s')
 

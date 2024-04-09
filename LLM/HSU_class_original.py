@@ -28,7 +28,6 @@ class HSU:
             verbose=True,
             max_tokens_limit=1000,
         )
-
         # Chatbot loop
         chat_history = []
         try:

@@ -3,6 +3,7 @@ import logo from "../assets/logoo.svg"; // Path to the logo image
 function ChatBot() {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  // Adding session id's for each user to maintain individual chat histories
   const [sessionID] = useState(() => Math.random().toString(36).substring(7));
 
   const sendMessage = async () => {
