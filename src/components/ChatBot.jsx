@@ -19,7 +19,7 @@ function ChatBot() {
     setMessage("");
     document.getElementById("loading").classList.remove("hidden");
     try {
-      const response = await fetch("http://localhost:5000/chat", {
+      const response = await fetch("http://10.72.8.178:5000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -80,7 +80,7 @@ function ChatBot() {
       (input) => input.textContent
     );
 
-    fetch("http://localhost:5000/save_chat", {
+    fetch("http://10.72.8.178:5000/save_chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
