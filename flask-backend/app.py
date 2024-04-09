@@ -4,6 +4,11 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
 
+from database_test import Connection
+from bson import json_util
+import json
+from pymongo import MongoClient
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 sys.path.insert(1, '../LLM/')
 from HSU import HSU
@@ -71,6 +76,45 @@ def save_chat():
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
+
+#Admin Page Functions -------------------
+
+#Will list out all users
+@app.route('/find_users', methods=['GET'])
+def find_users():
+    with app.app_context():
+        db_connection = Connection()
+        db_connection.connect("admin", "Stevencantremember", "admin")
+        users = db_connection.read("chatbot", "users")
+        #returns list [] with results need to jsonify this
+        #print(f'api end users: {users}')
+        db_connection.close
+        if users:
+            # below line fixes object_id so it can be processed
+            users_json = json_util.dumps(users)
+            #loads gets rid of \\ in front of every variable
+            parsed_data = json.loads(users_json)
+            return jsonify(parsed_data), 200
+        return jsonify({'error': 'User not found'}), 404
+
+#Will list out Chat logs 
+@app.route('/find_chatlog', methods=['GET'])
+def find_chatlog():
+    with app.app_context():
+        db_connection = Connection()
+        db_connection.connect("admin", "Stevencantremember", "admin")
+        users = db_connection.read("chatbot", "chatlog")
+        #returns list [] with results need to jsonify this
+        #print(f'api end users: {users}')
+        db_connection.close()
+        
+        if users:
+            # below line fixes object_id so it can be processed
+            users_json = json_util.dumps(users)
+            #loads gets rid of \\ in front of every variable
+            parsed_data = json.loads(users_json)
+            return jsonify(parsed_data), 200
+        return jsonify({'error': 'chatlog not found'}), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
