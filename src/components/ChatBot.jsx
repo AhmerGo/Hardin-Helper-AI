@@ -18,24 +18,27 @@ function ChatBot() {
     scrollToBottom();
     setMessage("");
     document.getElementById("loading").classList.remove("hidden");
+
     try {
       const response = await fetch("http://localhost:5000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Session-ID": sessionID,
           // Auth Headers
         },
-        body: JSON.stringify({ user_input: message, session_id: sessionID }),
+        body: JSON.stringify({
+          user_input: message,
+          user_id: sessionID,
+          chat_history: chatHistory,
+        }),
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
-        document.getElementById("loading").classList.add("hidden");
       }
 
       const responseData = await response.json();
-      console.log(responseData); // Add this line to log the response data
+      console.log(responseData);
 
       // Update chat history with the response
       setChatHistory([
@@ -51,7 +54,6 @@ function ChatBot() {
       document.getElementById("loading").classList.add("hidden");
     }
   };
-
   function clearChat() {
     const parent = document.getElementById("chatHistory");
     const children = parent.children;
@@ -66,10 +68,10 @@ function ChatBot() {
   }
 
   let history = document.getElementById("chatHistory");
-  function scrollToBottom(element){
+  function scrollToBottom(element) {
     requestAnimationFrame(() => {
       chatHistory.scrollTop = chatHistory.scrollHeight;
-  });
+    });
   }
 
   function saveChat() {
@@ -105,70 +107,76 @@ function ChatBot() {
   }
 
   return (
-
-      <div className="w-full flex justify-center items-center bg-hsu bg-center bg-no-repeat h-screen">
-        <div className="chat-section w-3/4 relative  flex flex-col h-96 bg-purple rounded-xl shadow-2xl p-6 ">
-          <div className="w-full flex justify-between mb-6">
-            <div className="w-1/4 bg-white rounded">
-              <a href="https://www.hsutx.edu/">
+    <div className="w-full flex justify-center items-center bg-hsu bg-center bg-no-repeat h-screen">
+      <div className="chat-section w-3/4 relative  flex flex-col h-96 bg-purple rounded-xl shadow-2xl p-6 ">
+        <div className="w-full flex justify-between mb-6">
+          <div className="w-1/4 bg-white rounded">
+            <a href="https://www.hsutx.edu/">
               <img src={logo} alt="" />
-              </a>
-            </div>
-            <div className="self-end">
-              <button onClick={clearChat}
-                className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
-                >
-                Clear Chat
-              </button>
-            </div>
+            </a>
           </div>
-            <div className="flex-grow overflow-auto mb-4 p-4 bg-white rounded-xl shadow-inner" id="chatHistory">
-              {chatHistory.map((chat, index) => (
-                <div key={index} className={`message ${chat.sender ==='user' ? 'rounded-r-lg': 'rounded-l-lg ml-auto'} rounded-b-lg  bg-gold text-purple w-fit flex`}>
-                  {chat.sender}: <br />
-                  {chat.text}
-                  <br />
-                </div>
-              ))}
-              <div id="loading" className="text-right rtl:text-right hidden">
-                  <div role="status">
-                    HossBot is typing...
-                  </div>
-              </div>
-            </div>
-            <div className="flex border-t border-gray-200 pt-4">
-              <textarea
-                id="input-box"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter"){
-                    e.preventDefault();
-                    sendMessage();
-                    clearInput();
-                  }
-                  }}
-                className="flex-grow p-3 border border-gray-300 rounded-l-xl focus:outline-none  focus:border-transparent"
-                placeholder="Type your message..."
-                style={{ resize: "none" }}
-              />
-              <button
-                onClick={sendMessage}
-                className="bg-[#401486] text-white p-3 rounded-r-xl shadow-md hover:bg-purple-700 transition duration-300 ease-in-out transform hover:text-gold hover:scale-105"
-              >
-                Send
-              </button>
-            </div>
-            <div className="flex justify-evenly my-2.5">
-              <button onClick={saveChat}
-                className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
-                >
-                Save Chat
-              </button>
-            </div>
+          <div className="self-end">
+            <button
+              onClick={clearChat}
+              className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
+            >
+              Clear Chat
+            </button>
           </div>
+        </div>
+        <div
+          className="flex-grow overflow-auto mb-4 p-4 bg-white rounded-xl shadow-inner"
+          id="chatHistory"
+        >
+          {chatHistory.map((chat, index) => (
+            <div
+              key={index}
+              className={`message ${
+                chat.sender === "user" ? "rounded-r-lg" : "rounded-l-lg ml-auto"
+              } rounded-b-lg  bg-gold text-purple w-fit flex`}
+            >
+              {chat.sender}: <br />
+              {chat.text}
+              <br />
+            </div>
+          ))}
+          <div id="loading" className="text-right rtl:text-right hidden">
+            <div role="status">HossBot is typing...</div>
+          </div>
+        </div>
+        <div className="flex border-t border-gray-200 pt-4">
+          <textarea
+            id="input-box"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                sendMessage();
+                clearInput();
+              }
+            }}
+            className="flex-grow p-3 border border-gray-300 rounded-l-xl focus:outline-none  focus:border-transparent"
+            placeholder="Type your message..."
+            style={{ resize: "none" }}
+          />
+          <button
+            onClick={sendMessage}
+            className="bg-[#401486] text-white p-3 rounded-r-xl shadow-md hover:bg-purple-700 transition duration-300 ease-in-out transform hover:text-gold hover:scale-105"
+          >
+            Send
+          </button>
+        </div>
+        <div className="flex justify-evenly my-2.5">
+          <button
+            onClick={saveChat}
+            className="bg-[#401486] text-white p-3 rounded-xl shadow-md focus:outline-none transition duration-300 ease-in-out transform hover:text-gold transform hover:scale-105"
+          >
+            Save Chat
+          </button>
+        </div>
       </div>
-
+    </div>
   );
 }
 
