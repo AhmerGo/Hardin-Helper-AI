@@ -9,7 +9,6 @@ sys.path.insert(1, '../LLM/')
 from HSU import HSU
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "*"}})
-
 hsu_instance = HSU()
 lock = threading.Lock()
 
