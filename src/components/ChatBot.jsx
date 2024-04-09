@@ -18,27 +18,24 @@ function ChatBot() {
     scrollToBottom();
     setMessage("");
     document.getElementById("loading").classList.remove("hidden");
-
     try {
       const response = await fetch("http://localhost:5000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Session-ID": sessionID,
           // Auth Headers
         },
-        body: JSON.stringify({
-          user_input: message,
-          user_id: sessionID,
-          chat_history: chatHistory,
-        }),
+        body: JSON.stringify({ user_input: message, session_id: sessionID }),
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
+        document.getElementById("loading").classList.add("hidden");
       }
 
       const responseData = await response.json();
-      console.log(responseData);
+      console.log(responseData); // Add this line to log the response data
 
       // Update chat history with the response
       setChatHistory([
@@ -54,6 +51,7 @@ function ChatBot() {
       document.getElementById("loading").classList.add("hidden");
     }
   };
+
   function clearChat() {
     const parent = document.getElementById("chatHistory");
     const children = parent.children;
