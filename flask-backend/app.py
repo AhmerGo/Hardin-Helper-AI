@@ -51,6 +51,7 @@ def chat():
 @app.route('/save_chat', methods=['POST'])
 def save_chat():
     with app.app_context():
+        #data = {"user_inputs":["Hi steven"],"bot_inputs":["Who is steven?"]}
         data = request.get_json()
         user_inputs = data.get('user_inputs', [])
         bot_inputs = data.get('bot_inputs', [])
@@ -62,7 +63,7 @@ def save_chat():
 
             chat_log = ''
             for user_input, bot_input in zip(user_inputs, bot_inputs):
-                chat_log += f'User: {user_input}\nBot: {bot_input}\n\n'
+                chat_log += f'User: {user_input} Bot: {bot_input}'
 
             print(chat_log)
             user_id = 1
