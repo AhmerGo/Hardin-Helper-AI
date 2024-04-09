@@ -3,6 +3,8 @@ import logo from "../assets/logoo.svg"; // Path to the logo image
 function ChatBot() {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  // Adding session id's for each user to maintain individual chat histories
+  const [sessionID] = useState(() => Math.random().toString(36).substring(7));
 
   const sendMessage = async () => {
     if (message.trim() === "") {
@@ -21,9 +23,10 @@ function ChatBot() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Session-ID": sessionID,
           // Auth Headers
         },
-        body: JSON.stringify({ user_input: message }),
+        body: JSON.stringify({ user_input: message, session_id: sessionID }),
       });
 
       if (!response.ok) {
