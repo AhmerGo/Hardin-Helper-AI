@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
 
-from database_test import Connection
+from database_helper import Connection
 from bson import json_util
 import json
 from pymongo import MongoClient
