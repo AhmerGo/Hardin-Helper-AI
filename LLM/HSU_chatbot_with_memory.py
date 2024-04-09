@@ -1,21 +1,27 @@
+import logging
 from langchain_community.embeddings import LlamaCppEmbeddings
 from langchain_community.llms import GPT4All
 from langchain.vectorstores.faiss import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
+import torch
 
 model_path = "./Models/wizardlm-13b-v1.2.Q4_0.gguf"
 index_path = "./HSU_index"
 
-
-def initialize_embeddings() -> LlamaCppEmbeddings:
-    return LlamaCppEmbeddings(model_path=model_path)
+logging.basicConfig(filename='chatbot.log', filemode='a', level=logging.INFO, format='%(asctime)s - %(name)s - %('
+                                                                                     'levelname)s - %(message)s')
 
 
 def main():
-    device = "gpu"
+    try:
+        if torch.cuda.is_available():
+            device = "gpu"
+    except Exception as e:
+        device = "cpu"
+        logging.error(f"Error while initializing device: {e}")
     llm = GPT4All(model=model_path, device=device)
-    embeddings = initialize_embeddings()
+    embeddings = LlamaCppEmbeddings(model_path=model_path)
     index = FAISS.load_local(index_path, embeddings, allow_dangerous_deserialization=True)
     memory = ConversationBufferMemory(input_key="question")  # Specify the input key
     qa = ConversationalRetrievalChain.from_llm(
