@@ -10,6 +10,9 @@ function ChatBot() {
   }, [chatHistory]);
 
 
+  // Adding session id's for each user to maintain individual chat histories
+  const [sessionID] = useState(() => Math.random().toString(36).substring(7));
+
   const sendMessage = async () => {
     if (message.trim() === "") {
       // Optionally handle empty message case
@@ -22,13 +25,14 @@ function ChatBot() {
     setMessage("");
     document.getElementById("loading").classList.remove("hidden");
     try {
-      const response = await fetch("http://localhost:5000/chat", {
+      const response = await fetch("http://10.72.8.178:5000/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Session-ID": sessionID,
           // Auth Headers
         },
-        body: JSON.stringify({ user_input: message }),
+        body: JSON.stringify({ user_input: message, session_id: sessionID }),
       });
 
       if (!response.ok) {
@@ -70,6 +74,12 @@ function ChatBot() {
     ev.preventDefault();
     saveChat(0);
   })
+  let history = document.getElementById("chatHistory");
+  function scrollToBottom(element) {
+    requestAnimationFrame(() => {
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    });
+  }
 
   
   
@@ -114,7 +124,7 @@ function ChatBot() {
   }
 
   return (
-
+    <div>
       <div className="w-full xsml:w-full flex justify-center items-center bg-hsu bg-center bg-no-repeat h-screen">
         <div className="chat-section w-3/4  h-3/4 xsml:w-full relative  flex flex-col bg-purple rounded-xl shadow-2xl p-6 ">
           <div className="w-full flex justify-between mb-6">
@@ -185,8 +195,8 @@ function ChatBot() {
               </button> */}
             </div>
           </div>
+        </div>
       </div>
-
   );
 }
 

@@ -1,0 +1,1113 @@
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: NVIDIA GeForce RTX 4080, compute capability 8.9
+llama_model_loader: loaded meta data with 19 key-value pairs and 363 tensors from ../LLM/Models/wizardlm-13b-v1.2.Q4_0.gguf (version GGUF V2)
+llama_model_loader: - tensor    0:                token_embd.weight q4_0     [  5120, 32000,     1,     1 ]
+llama_model_loader: - tensor    1:              blk.0.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor    2:              blk.0.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor    3:              blk.0.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor    4:         blk.0.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor    5:            blk.0.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor    6:            blk.0.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor    7:              blk.0.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor    8:           blk.0.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor    9:            blk.0.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   10:              blk.1.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   11:              blk.1.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   12:              blk.1.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   13:         blk.1.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   14:            blk.1.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   15:            blk.1.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   16:              blk.1.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   17:           blk.1.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   18:            blk.1.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   19:              blk.2.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   20:              blk.2.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   21:              blk.2.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   22:         blk.2.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   23:            blk.2.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   24:            blk.2.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   25:              blk.2.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   26:           blk.2.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   27:            blk.2.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   28:              blk.3.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   29:              blk.3.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   30:              blk.3.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   31:         blk.3.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   32:            blk.3.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   33:            blk.3.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   34:              blk.3.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   35:           blk.3.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   36:            blk.3.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   37:              blk.4.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   38:              blk.4.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   39:              blk.4.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   40:         blk.4.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   41:            blk.4.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   42:            blk.4.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   43:              blk.4.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   44:           blk.4.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   45:            blk.4.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   46:              blk.5.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   47:              blk.5.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   48:              blk.5.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   49:         blk.5.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   50:            blk.5.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   51:            blk.5.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   52:              blk.5.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   53:           blk.5.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   54:            blk.5.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   55:              blk.6.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   56:              blk.6.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   57:              blk.6.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   58:         blk.6.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   59:            blk.6.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   60:            blk.6.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   61:              blk.6.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   62:           blk.6.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   63:            blk.6.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   64:              blk.7.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   65:              blk.7.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   66:              blk.7.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   67:         blk.7.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   68:            blk.7.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   69:            blk.7.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   70:              blk.7.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   71:           blk.7.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   72:            blk.7.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   73:              blk.8.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   74:              blk.8.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   75:              blk.8.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   76:         blk.8.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   77:            blk.8.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   78:            blk.8.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   79:              blk.8.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   80:           blk.8.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   81:            blk.8.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   82:              blk.9.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   83:              blk.9.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   84:              blk.9.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   85:         blk.9.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   86:            blk.9.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   87:            blk.9.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   88:              blk.9.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   89:           blk.9.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   90:            blk.9.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   91:             blk.10.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   92:             blk.10.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   93:             blk.10.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   94:        blk.10.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor   95:           blk.10.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   96:           blk.10.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor   97:             blk.10.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor   98:          blk.10.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor   99:           blk.10.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  100:             blk.11.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  101:             blk.11.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  102:             blk.11.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  103:        blk.11.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  104:           blk.11.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  105:           blk.11.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  106:             blk.11.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  107:          blk.11.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  108:           blk.11.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  109:             blk.12.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  110:             blk.12.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  111:             blk.12.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  112:        blk.12.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  113:           blk.12.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  114:           blk.12.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  115:             blk.12.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  116:          blk.12.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  117:           blk.12.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  118:             blk.13.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  119:             blk.13.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  120:             blk.13.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  121:        blk.13.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  122:           blk.13.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  123:           blk.13.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  124:             blk.13.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  125:          blk.13.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  126:           blk.13.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  127:             blk.14.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  128:             blk.14.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  129:             blk.14.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  130:        blk.14.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  131:           blk.14.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  132:           blk.14.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  133:             blk.14.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  134:          blk.14.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  135:           blk.14.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  136:             blk.15.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  137:             blk.15.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  138:             blk.15.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  139:        blk.15.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  140:           blk.15.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  141:           blk.15.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  142:             blk.15.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  143:          blk.15.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  144:           blk.15.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  145:             blk.16.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  146:             blk.16.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  147:             blk.16.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  148:        blk.16.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  149:           blk.16.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  150:           blk.16.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  151:             blk.16.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  152:          blk.16.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  153:           blk.16.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  154:             blk.17.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  155:             blk.17.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  156:             blk.17.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  157:        blk.17.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  158:           blk.17.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  159:           blk.17.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  160:             blk.17.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  161:          blk.17.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  162:           blk.17.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  163:             blk.18.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  164:             blk.18.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  165:             blk.18.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  166:        blk.18.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  167:           blk.18.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  168:           blk.18.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  169:             blk.18.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  170:          blk.18.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  171:           blk.18.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  172:             blk.19.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  173:             blk.19.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  174:             blk.19.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  175:        blk.19.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  176:           blk.19.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  177:           blk.19.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  178:             blk.19.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  179:          blk.19.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  180:           blk.19.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  181:             blk.20.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  182:             blk.20.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  183:             blk.20.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  184:        blk.20.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  185:           blk.20.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  186:           blk.20.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  187:             blk.20.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  188:          blk.20.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  189:           blk.20.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  190:             blk.21.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  191:             blk.21.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  192:             blk.21.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  193:        blk.21.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  194:           blk.21.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  195:           blk.21.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  196:             blk.21.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  197:          blk.21.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  198:           blk.21.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  199:             blk.22.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  200:             blk.22.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  201:             blk.22.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  202:        blk.22.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  203:           blk.22.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  204:           blk.22.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  205:             blk.22.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  206:          blk.22.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  207:           blk.22.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  208:             blk.23.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  209:             blk.23.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  210:             blk.23.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  211:        blk.23.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  212:           blk.23.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  213:           blk.23.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  214:             blk.23.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  215:          blk.23.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  216:           blk.23.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  217:             blk.24.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  218:             blk.24.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  219:             blk.24.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  220:        blk.24.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  221:           blk.24.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  222:           blk.24.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  223:             blk.24.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  224:          blk.24.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  225:           blk.24.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  226:             blk.25.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  227:             blk.25.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  228:             blk.25.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  229:        blk.25.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  230:           blk.25.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  231:           blk.25.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  232:             blk.25.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  233:          blk.25.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  234:           blk.25.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  235:             blk.26.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  236:             blk.26.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  237:             blk.26.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  238:        blk.26.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  239:           blk.26.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  240:           blk.26.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  241:             blk.26.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  242:          blk.26.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  243:           blk.26.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  244:             blk.27.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  245:             blk.27.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  246:             blk.27.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  247:        blk.27.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  248:           blk.27.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  249:           blk.27.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  250:             blk.27.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  251:          blk.27.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  252:           blk.27.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  253:             blk.28.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  254:             blk.28.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  255:             blk.28.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  256:        blk.28.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  257:           blk.28.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  258:           blk.28.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  259:             blk.28.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  260:          blk.28.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  261:           blk.28.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  262:             blk.29.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  263:             blk.29.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  264:             blk.29.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  265:        blk.29.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  266:           blk.29.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  267:           blk.29.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  268:             blk.29.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  269:          blk.29.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  270:           blk.29.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  271:             blk.30.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  272:             blk.30.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  273:             blk.30.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  274:        blk.30.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  275:           blk.30.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  276:           blk.30.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  277:             blk.30.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  278:          blk.30.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  279:           blk.30.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  280:             blk.31.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  281:             blk.31.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  282:             blk.31.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  283:        blk.31.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  284:           blk.31.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  285:           blk.31.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  286:             blk.31.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  287:          blk.31.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  288:           blk.31.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  289:             blk.32.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  290:             blk.32.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  291:             blk.32.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  292:        blk.32.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  293:           blk.32.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  294:           blk.32.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  295:             blk.32.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  296:          blk.32.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  297:           blk.32.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  298:             blk.33.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  299:             blk.33.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  300:             blk.33.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  301:        blk.33.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  302:           blk.33.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  303:           blk.33.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  304:             blk.33.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  305:          blk.33.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  306:           blk.33.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  307:             blk.34.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  308:             blk.34.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  309:             blk.34.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  310:        blk.34.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  311:           blk.34.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  312:           blk.34.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  313:             blk.34.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  314:          blk.34.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  315:           blk.34.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  316:             blk.35.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  317:             blk.35.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  318:             blk.35.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  319:        blk.35.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  320:           blk.35.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  321:           blk.35.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  322:             blk.35.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  323:          blk.35.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  324:           blk.35.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  325:             blk.36.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  326:             blk.36.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  327:             blk.36.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  328:        blk.36.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  329:           blk.36.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  330:           blk.36.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  331:             blk.36.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  332:          blk.36.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  333:           blk.36.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  334:             blk.37.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  335:             blk.37.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  336:             blk.37.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  337:        blk.37.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  338:           blk.37.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  339:           blk.37.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  340:             blk.37.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  341:          blk.37.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  342:           blk.37.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  343:             blk.38.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  344:             blk.38.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  345:             blk.38.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  346:        blk.38.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  347:           blk.38.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  348:           blk.38.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  349:             blk.38.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  350:          blk.38.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  351:           blk.38.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  352:             blk.39.attn_q.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  353:             blk.39.attn_k.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  354:             blk.39.attn_v.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  355:        blk.39.attn_output.weight q4_0     [  5120,  5120,     1,     1 ]
+llama_model_loader: - tensor  356:           blk.39.ffn_gate.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  357:           blk.39.ffn_down.weight q4_0     [ 13824,  5120,     1,     1 ]
+llama_model_loader: - tensor  358:             blk.39.ffn_up.weight q4_0     [  5120, 13824,     1,     1 ]
+llama_model_loader: - tensor  359:          blk.39.attn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  360:           blk.39.ffn_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  361:               output_norm.weight f32      [  5120,     1,     1,     1 ]
+llama_model_loader: - tensor  362:                    output.weight q6_K     [  5120, 32000,     1,     1 ]
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = LLaMA v2
+llama_model_loader: - kv   2:                       llama.context_length u32              = 4096
+llama_model_loader: - kv   3:                     llama.embedding_length u32              = 5120
+llama_model_loader: - kv   4:                          llama.block_count u32              = 40
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 13824
+llama_model_loader: - kv   6:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv   7:                 llama.attention.head_count u32              = 40
+llama_model_loader: - kv   8:              llama.attention.head_count_kv u32              = 40
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                          general.file_type u32              = 2
+llama_model_loader: - kv  11:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  13:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   81 tensors
+llama_model_loader: - type q4_0:  281 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens definition check successful ( 259/32000 ).
+llm_load_print_meta: format           = GGUF V2
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 32000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 4096
+llm_load_print_meta: n_embd           = 5120
+llm_load_print_meta: n_head           = 40
+llm_load_print_meta: n_head_kv        = 40
+llm_load_print_meta: n_layer          = 40
+llm_load_print_meta: n_rot            = 128
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 13824
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 4096
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: model type       = 13B
+llm_load_print_meta: model ftype      = Q4_0
+llm_load_print_meta: model params     = 13.02 B
+llm_load_print_meta: model size       = 6.86 GiB (4.53 BPW) 
+llm_load_print_meta: general.name     = LLaMA v2
+llm_load_print_meta: BOS token        = 1 '<s>'
+llm_load_print_meta: EOS token        = 2 '</s>'
+llm_load_print_meta: UNK token        = 0 '<unk>'
+llm_load_print_meta: LF token         = 13 '<0x0A>'
+llm_load_tensors: ggml ctx size =    0.14 MiB
+llm_load_tensors: using CUDA for GPU acceleration
+llm_load_tensors: mem required  = 7024.03 MiB
+llm_load_tensors: offloading 0 repeating layers to GPU
+llm_load_tensors: offloaded 0/41 layers to GPU
+llm_load_tensors: VRAM used: 0.00 MiB
+...................................................................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_new_context_with_model: KV self size  =  400.00 MiB, K (f16):  200.00 MiB, V (f16):  200.00 MiB
+llama_build_graph: non-view tensors processed: 844/844
+llama_new_context_with_model: compute buffer total size = 78.19 MiB
+llama_new_context_with_model: VRAM scratch buffer: 75.00 MiB
+llama_new_context_with_model: total VRAM used: 75.00 MiB (model: 0.00 MiB, context: 75.00 MiB)
+AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
+2024-04-08 20:42:00,101 - INFO - Loading faiss with AVX2 support.
+2024-04-08 20:42:00,108 - INFO - Successfully loaded faiss with AVX2 support.
+llama.cpp: using Vulkan on NVIDIA GeForce RTX 4080
+ * Serving Flask app 'app'
+ * Debug mode: off
+2024-04-08 20:42:02,994 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.77:5000
+2024-04-08 20:42:02,994 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-08 20:42:07,243 - INFO - Received request at /chat endpoint
+2024-04-08 20:42:07,244 - INFO - Received request at /chat endpoint
+2024-04-08 20:42:07,244 - INFO - ac335896-0212-4dcb-909e-f22ccc0cf53b
+2024-04-08 20:42:07,244 - INFO - Received request at /chat endpoint
+2024-04-08 20:42:07,245 - INFO - Received request at /chat endpoint
+2024-04-08 20:42:07,246 - INFO - Received request at /chat endpoint
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     426.47 ms /     7 tokens (   60.92 ms per token,    16.41 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     428.06 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+at HSU and in life. See Learning Resources It is our desire to help you experience all that HSU has to offer. We hope that your visit has been an informative and helpful experience. Your comments are very important in helping us evaluate how we can serve
+
+either in the morning or afternoon. Come see what HSU will do for you! Click below to choose your date. Schedule On-Campus Visit We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you
+
+Question: Hello, how are you?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:42:14,973 - INFO - Chat History Updated for Session ac335896-0212-4dcb-909e-f22ccc0cf53b: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.")]
+2024-04-08 20:42:14,973 - INFO - Generated response:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+2024-04-08 20:42:14,973 - INFO - 127.0.0.1 - - [08/Apr/2024 20:42:14] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:42:14,973 - INFO - 55b830ef-8572-4539-bb05-1456ae23dbf9
+2024-04-08 20:42:14,975 - INFO - Received request at /chat endpoint
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     445.15 ms /     7 tokens (   63.59 ms per token,    15.72 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     445.86 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+at HSU and in life. See Learning Resources It is our desire to help you experience all that HSU has to offer. We hope that your visit has been an informative and helpful experience. Your comments are very important in helping us evaluate how we can serve
+
+either in the morning or afternoon. Come see what HSU will do for you! Click below to choose your date. Schedule On-Campus Visit We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you
+
+Question: Hello, how are you?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:42:21,295 - INFO - Chat History Updated for Session 55b830ef-8572-4539-bb05-1456ae23dbf9: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.")]
+2024-04-08 20:42:21,295 - INFO - Generated response:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+2024-04-08 20:42:21,295 - INFO - 127.0.0.1 - - [08/Apr/2024 20:42:21] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:42:21,296 - INFO - 06d0780f-4359-4a63-a184-8974b4f19edf
+2024-04-08 20:42:21,297 - INFO - Received request at /chat endpoint
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     437.25 ms /     7 tokens (   62.46 ms per token,    16.01 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     438.18 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+at HSU and in life. See Learning Resources It is our desire to help you experience all that HSU has to offer. We hope that your visit has been an informative and helpful experience. Your comments are very important in helping us evaluate how we can serve
+
+either in the morning or afternoon. Come see what HSU will do for you! Click below to choose your date. Schedule On-Campus Visit We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you
+
+Question: Hello, how are you?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:42:27,593 - INFO - Chat History Updated for Session 06d0780f-4359-4a63-a184-8974b4f19edf: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.")]
+2024-04-08 20:42:27,593 - INFO - Generated response:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+2024-04-08 20:42:27,593 - INFO - 127.0.0.1 - - [08/Apr/2024 20:42:27] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:42:27,593 - INFO - 941c63e4-17ca-43ef-9371-140af6f49e8e
+2024-04-08 20:42:27,594 - INFO - Received request at /chat endpoint
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     502.33 ms /     8 tokens (   62.79 ms per token,    15.93 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     503.12 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+help you make the right one. Tell us what you need to know, and we'll answer all your questions. 325-670-1206 The mission of Hardin-Simmons University is to be a community dedicated to providing excellence in education enlightened by Christian faith and
+
+help you make the right one. Tell us what you need to know, and we'll answer all your questions. 325-670-1206 The mission of Hardin-Simmons University is to be a community dedicated to providing excellence in education enlightened by Christian faith and
+
+help you make the right one. Tell us what you need to know, and we'll answer all your questions. 325-670-1206 The mission of Hardin-Simmons University is to be a community dedicated to providing excellence in education enlightened by Christian faith and
+
+Question: What's the latest news?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:42:33,079 - INFO - Chat History Updated for Session 941c63e4-17ca-43ef-9371-140af6f49e8e: [("What's the latest news?", " I don't know")]
+2024-04-08 20:42:33,079 - INFO - Generated response:  I don't know
+2024-04-08 20:42:33,079 - INFO - 127.0.0.1 - - [08/Apr/2024 20:42:33] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:42:33,079 - INFO - c390b395-56c3-461c-a263-3d4f3755b1be
+2024-04-08 20:42:33,081 - INFO - Received request at /chat endpoint
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     502.78 ms /     8 tokens (   62.85 ms per token,    15.91 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     504.26 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+help you make the right one. Tell us what you need to know, and we'll answer all your questions. 325-670-1206 The mission of Hardin-Simmons University is to be a community dedicated to providing excellence in education enlightened by Christian faith and
+
+help you make the right one. Tell us what you need to know, and we'll answer all your questions. 325-670-1206 The mission of Hardin-Simmons University is to be a community dedicated to providing excellence in education enlightened by Christian faith and
+
+help you make the right one. Tell us what you need to know, and we'll answer all your questions. 325-670-1206 The mission of Hardin-Simmons University is to be a community dedicated to providing excellence in education enlightened by Christian faith and
+
+Question: What's the latest news?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:42:38,481 - INFO - Chat History Updated for Session c390b395-56c3-461c-a263-3d4f3755b1be: [("What's the latest news?", " I don't know")]
+2024-04-08 20:42:38,482 - INFO - Generated response:  I don't know
+2024-04-08 20:42:38,482 - INFO - 127.0.0.1 - - [08/Apr/2024 20:42:38] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:42:38,482 - INFO - ac335896-0212-4dcb-909e-f22ccc0cf53b
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: Hello, how are you?
+Assistant:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+Follow Up Input: What is the weather today?
+Standalone question:[0m
+2024-04-08 20:42:38,484 - INFO - Received request at /chat endpoint
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     846.00 ms /    14 tokens (   60.43 ms per token,    16.55 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     846.68 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+status) the student previously had. We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you can call Admissions at 877-GO-HSUTX. The best way to really experience Hardin-Simmons
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+Question:  Can you provide me with the current weather conditions for today?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:42:49,099 - INFO - Chat History Updated for Session ac335896-0212-4dcb-909e-f22ccc0cf53b: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above."), ('What is the weather today?', '  I\'m sorry, but as an AI language model developed by OpenAI, I don\'t have real-time access to external databases or APIs. Therefore, I can\'t provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.')]
+2024-04-08 20:42:49,099 - INFO - Generated response:   I'm sorry, but as an AI language model developed by OpenAI, I don't have real-time access to external databases or APIs. Therefore, I can't provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.
+2024-04-08 20:42:49,099 - INFO - 127.0.0.1 - - [08/Apr/2024 20:42:49] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:42:49,099 - INFO - 55b830ef-8572-4539-bb05-1456ae23dbf9
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: Hello, how are you?
+Assistant:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+Follow Up Input: What is the weather today?
+Standalone question:[0m
+2024-04-08 20:42:49,101 - INFO - Received request at /chat endpoint
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     849.69 ms /    14 tokens (   60.69 ms per token,    16.48 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     850.57 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+status) the student previously had. We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you can call Admissions at 877-GO-HSUTX. The best way to really experience Hardin-Simmons
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+Question:  Can you provide me with the current weather conditions for today?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:42:59,877 - INFO - Chat History Updated for Session 55b830ef-8572-4539-bb05-1456ae23dbf9: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above."), ('What is the weather today?', '  I\'m sorry, but as an AI language model developed by OpenAI, I don\'t have real-time access to external databases or APIs. Therefore, I can\'t provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.')]
+2024-04-08 20:42:59,877 - INFO - Generated response:   I'm sorry, but as an AI language model developed by OpenAI, I don't have real-time access to external databases or APIs. Therefore, I can't provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.
+2024-04-08 20:42:59,877 - INFO - 127.0.0.1 - - [08/Apr/2024 20:42:59] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:42:59,877 - INFO - 06d0780f-4359-4a63-a184-8974b4f19edf
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: Hello, how are you?
+Assistant:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+Follow Up Input: What is the weather today?
+Standalone question:[0m
+2024-04-08 20:42:59,880 - INFO - Received request at /chat endpoint
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     835.83 ms /    14 tokens (   59.70 ms per token,    16.75 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     836.57 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+status) the student previously had. We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you can call Admissions at 877-GO-HSUTX. The best way to really experience Hardin-Simmons
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+Question:  Can you provide me with the current weather conditions for today?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:43:12,592 - INFO - Chat History Updated for Session 06d0780f-4359-4a63-a184-8974b4f19edf: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above."), ('What is the weather today?', '  I\'m sorry, but as an AI language model developed by OpenAI, I don\'t have real-time access to external databases or APIs. Therefore, I can\'t provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.')]
+2024-04-08 20:43:12,600 - INFO - Generated response:   I'm sorry, but as an AI language model developed by OpenAI, I don't have real-time access to external databases or APIs. Therefore, I can't provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.
+2024-04-08 20:43:12,601 - INFO - 127.0.0.1 - - [08/Apr/2024 20:43:12] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:43:12,601 - INFO - 941c63e4-17ca-43ef-9371-140af6f49e8e
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: What's the latest news?
+Assistant:  I don't know
+Follow Up Input: Can you give me a movie recommendation?
+Standalone question:[0m
+2024-04-08 20:43:12,603 - INFO - Received request at /chat endpoint
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     833.38 ms /    14 tokens (   59.53 ms per token,    16.80 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     834.55 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+on areas where I could improve.” -Marcus McCray, Licensed Professional Counselor-Associate, ‘23 “I really appreciated the fact that all of the professors were from such a wide array of backgrounds and theoretical orientations, so we were able to have a
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+status) the student previously had. We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you can call Admissions at 877-GO-HSUTX. The best way to really experience Hardin-Simmons
+
+time and associated class preparation. Each credit hour reflects one hour of instructional time per week for a total of 15 instructional hours per semester. Graduate students are expected to spend a minimum of 3 hours in class preparation for each credit
+
+Question:  Do you have any recommendations for movies to watch?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:43:25,697 - INFO - Chat History Updated for Session 941c63e4-17ca-43ef-9371-140af6f49e8e: [("What's the latest news?", " I don't know"), ('Can you give me a movie recommendation?', '  Yes, I do! If you\'re interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you\'re in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It\'s a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.')]
+2024-04-08 20:43:25,697 - INFO - Generated response:   Yes, I do! If you're interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you're in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It's a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.
+2024-04-08 20:43:25,697 - INFO - 127.0.0.1 - - [08/Apr/2024 20:43:25] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:43:25,697 - INFO - c390b395-56c3-461c-a263-3d4f3755b1be
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: What's the latest news?
+Assistant:  I don't know
+Follow Up Input: Can you give me a movie recommendation?
+Standalone question:[0m
+2024-04-08 20:43:25,699 - INFO - Received request at /chat endpoint
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     850.09 ms /    14 tokens (   60.72 ms per token,    16.47 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     850.82 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+on areas where I could improve.” -Marcus McCray, Licensed Professional Counselor-Associate, ‘23 “I really appreciated the fact that all of the professors were from such a wide array of backgrounds and theoretical orientations, so we were able to have a
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+status) the student previously had. We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you can call Admissions at 877-GO-HSUTX. The best way to really experience Hardin-Simmons
+
+time and associated class preparation. Each credit hour reflects one hour of instructional time per week for a total of 15 instructional hours per semester. Graduate students are expected to spend a minimum of 3 hours in class preparation for each credit
+
+Question:  Do you have any recommendations for movies to watch?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:43:38,905 - INFO - Chat History Updated for Session c390b395-56c3-461c-a263-3d4f3755b1be: [("What's the latest news?", " I don't know"), ('Can you give me a movie recommendation?', '  Yes, I do! If you\'re interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you\'re in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It\'s a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.')]
+2024-04-08 20:43:38,905 - INFO - Generated response:   Yes, I do! If you're interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you're in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It's a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.
+2024-04-08 20:43:38,905 - INFO - 127.0.0.1 - - [08/Apr/2024 20:43:38] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:43:38,905 - INFO - ac335896-0212-4dcb-909e-f22ccc0cf53b
+
+
+[1m> Entering new LLMChain chain...[0m
+2024-04-08 20:43:38,907 - INFO - Received request at /chat endpoint
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: Hello, how are you?
+Assistant:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+Human: What is the weather today?
+Assistant:   I'm sorry, but as an AI language model developed by OpenAI, I don't have real-time access to external databases or APIs. Therefore, I can't provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.
+Follow Up Input: Tell me a joke.
+Standalone question:[0m
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     612.11 ms /    10 tokens (   61.21 ms per token,    16.34 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     612.98 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+on areas where I could improve.” -Marcus McCray, Licensed Professional Counselor-Associate, ‘23 “I really appreciated the fact that all of the professors were from such a wide array of backgrounds and theoretical orientations, so we were able to have a
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+Question:  Can you tell me a joke?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:43:48,632 - INFO - Chat History Updated for Session ac335896-0212-4dcb-909e-f22ccc0cf53b: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above."), ('What is the weather today?', '  I\'m sorry, but as an AI language model developed by OpenAI, I don\'t have real-time access to external databases or APIs. Therefore, I can\'t provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.'), ('Tell me a joke.', "  I'm sorry but the context provided does not contain any information about jokes or humor, so I cannot provide an answer to your question at this time.")]
+2024-04-08 20:43:48,632 - INFO - Generated response:   I'm sorry but the context provided does not contain any information about jokes or humor, so I cannot provide an answer to your question at this time.
+2024-04-08 20:43:48,632 - INFO - 127.0.0.1 - - [08/Apr/2024 20:43:48] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:43:48,632 - INFO - 55b830ef-8572-4539-bb05-1456ae23dbf9
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: Hello, how are you?
+Assistant:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+Human: What is the weather today?
+Assistant:   I'm sorry, but as an AI language model developed by OpenAI, I don't have real-time access to external databases or APIs. Therefore, I can't provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.
+Follow Up Input: Tell me a joke.
+Standalone question:[0m
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     605.35 ms /    10 tokens (   60.54 ms per token,    16.52 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     606.24 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+on areas where I could improve.” -Marcus McCray, Licensed Professional Counselor-Associate, ‘23 “I really appreciated the fact that all of the professors were from such a wide array of backgrounds and theoretical orientations, so we were able to have a
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+Question:  Can you tell me a joke?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:43:58,351 - INFO - Chat History Updated for Session 55b830ef-8572-4539-bb05-1456ae23dbf9: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above."), ('What is the weather today?', '  I\'m sorry, but as an AI language model developed by OpenAI, I don\'t have real-time access to external databases or APIs. Therefore, I can\'t provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.'), ('Tell me a joke.', "  I'm sorry but the context provided does not contain any information about jokes or humor, so I cannot provide an answer to your question at this time.")]
+2024-04-08 20:43:58,351 - INFO - Generated response:   I'm sorry but the context provided does not contain any information about jokes or humor, so I cannot provide an answer to your question at this time.
+2024-04-08 20:43:58,352 - INFO - 127.0.0.1 - - [08/Apr/2024 20:43:58] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:43:58,352 - INFO - 06d0780f-4359-4a63-a184-8974b4f19edf
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: Hello, how are you?
+Assistant:  I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above.
+Human: What is the weather today?
+Assistant:   I'm sorry, but as an AI language model developed by OpenAI, I don't have real-time access to external databases or APIs. Therefore, I can't provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.
+Follow Up Input: Tell me a joke.
+Standalone question:[0m
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     616.39 ms /    10 tokens (   61.64 ms per token,    16.22 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     617.81 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+you fulfill your future goal. Begin your HSU graduate studies experience. Apply today! Apply Now! Review your program specific application checklist and complete your application for graduate school today! See the Checklist Schedule a campus tour and an
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+on areas where I could improve.” -Marcus McCray, Licensed Professional Counselor-Associate, ‘23 “I really appreciated the fact that all of the professors were from such a wide array of backgrounds and theoretical orientations, so we were able to have a
+
+as soon as they become available. After 2021 taxes are filed, submit your Tax Transcript or signed copy of your Federal 1040 Tax Return for verification. The consequences of failing to meet verification deadlines still apply. There are circumstances where
+
+Question:  Can you tell me a joke?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:44:07,936 - INFO - Chat History Updated for Session 06d0780f-4359-4a63-a184-8974b4f19edf: [('Hello, how are you?', " I am an AI language model developed by OpenAI, so I don't have feelings or emotions like a human does. However, I can assist you with answering your questions to the best of my ability based on the information provided in the context given above."), ('What is the weather today?', '  I\'m sorry, but as an AI language model developed by OpenAI, I don\'t have real-time access to external databases or APIs. Therefore, I can\'t provide you with the current weather conditions for your location. However, there are many other ways to find out the current weather conditions such as using a search engine like Google and typing "current weather [your city name]" or checking local news websites or apps that provide real-time weather updates.'), ('Tell me a joke.', "  I'm sorry but the context provided does not contain any information about jokes or humor, so I cannot provide an answer to your question at this time.")]
+2024-04-08 20:44:07,936 - INFO - Generated response:   I'm sorry but the context provided does not contain any information about jokes or humor, so I cannot provide an answer to your question at this time.
+2024-04-08 20:44:07,936 - INFO - 127.0.0.1 - - [08/Apr/2024 20:44:07] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:44:07,936 - INFO - 941c63e4-17ca-43ef-9371-140af6f49e8e
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: What's the latest news?
+Assistant:  I don't know
+Human: Can you give me a movie recommendation?
+Assistant:   Yes, I do! If you're interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you're in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It's a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.
+Follow Up Input: What day is it today?
+Standalone question:[0m
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     730.99 ms /    12 tokens (   60.92 ms per token,    16.42 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     731.85 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+grade. What is SAP? – Satisfactory Academic Progress (SAP) means that you are satisfactorily progressing toward degree completion by qualitative (GPA) and quantitative (Pace and Maximum Timeframe) measures. The HSU Financial Aid Office is required by
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+status) the student previously had. We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you can call Admissions at 877-GO-HSUTX. The best way to really experience Hardin-Simmons
+
+for a process called verification. If your FAFSA is selected for verification, Hardin-Simmons University (HSU) will need to collect additional documentation from you in order to verify some of the information you provided on your FAFSA. For example, HSU
+
+Question:  
+What day of the week is it today?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:44:17,740 - INFO - Chat History Updated for Session 941c63e4-17ca-43ef-9371-140af6f49e8e: [("What's the latest news?", " I don't know"), ('Can you give me a movie recommendation?', '  Yes, I do! If you\'re interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you\'re in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It\'s a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.'), ('What day is it today?', "  I don't know")]
+2024-04-08 20:44:17,740 - INFO - Generated response:   I don't know
+2024-04-08 20:44:17,740 - INFO - 127.0.0.1 - - [08/Apr/2024 20:44:17] "POST /chat HTTP/1.1" 200 -
+2024-04-08 20:44:17,740 - INFO - c390b395-56c3-461c-a263-3d4f3755b1be
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mGiven the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+
+Chat History:
+
+Human: What's the latest news?
+Assistant:  I don't know
+Human: Can you give me a movie recommendation?
+Assistant:   Yes, I do! If you're interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you're in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It's a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.
+Follow Up Input: What day is it today?
+Standalone question:[0m
+
+[1m> Finished chain.[0m
+
+llama_print_timings:        load time =     426.62 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =     738.11 ms /    12 tokens (   61.51 ms per token,    16.26 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     738.46 ms
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+grade. What is SAP? – Satisfactory Academic Progress (SAP) means that you are satisfactorily progressing toward degree completion by qualitative (GPA) and quantitative (Pace and Maximum Timeframe) measures. The HSU Financial Aid Office is required by
+
+information may need to be corrected. If selected, you will be directed to your Campus Logic StudentForms to complete the steps necessary for verification. You and a parent will be asked to sign a verification webform, attach any required documents, and
+
+status) the student previously had. We can't wait to see you at HSU! Click the button below and get started on your application. If you have any questions, you can call Admissions at 877-GO-HSUTX. The best way to really experience Hardin-Simmons
+
+for a process called verification. If your FAFSA is selected for verification, Hardin-Simmons University (HSU) will need to collect additional documentation from you in order to verify some of the information you provided on your FAFSA. For example, HSU
+
+Question:  
+What day of the week is it today?
+Helpful Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+2024-04-08 20:44:27,642 - INFO - Chat History Updated for Session c390b395-56c3-461c-a263-3d4f3755b1be: [("What's the latest news?", " I don't know"), ('Can you give me a movie recommendation?', '  Yes, I do! If you\'re interested in watching something with action and adventure, "Indiana Jones" is an excellent choice. It has a great mix of humor, suspense, and thrilling scenes that will keep you on the edge of your seat. Another option could be "The Lord of the Rings," which is a classic fantasy epic filled with stunning visuals and memorable characters. If you\'re in the mood for something more emotional, "Forrest Gump" is an excellent choice that explores themes like love, loss, and friendship in a heartwarming way. Lastly, if you want to watch something thought-provoking and visually stunning, "Inception" could be your pick. It\'s a mind-bending sci-fi movie with complex plot twists that will keep you guessing until the very end.'), ('What day is it today?', "  I don't know")]
+2024-04-08 20:44:27,643 - INFO - Generated response:   I don't know
+2024-04-08 20:44:27,643 - INFO - 127.0.0.1 - - [08/Apr/2024 20:44:27] "POST /chat HTTP/1.1" 200 -
