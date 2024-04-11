@@ -1,6 +1,7 @@
 import concurrent.futures
 import requests
 import uuid
+import time  # Import the time module
 
 # The endpoint where your chatbot listens for incoming messages
 CHATBOT_ENDPOINT = 'http://localhost:5000/chat'
@@ -20,13 +21,13 @@ QUESTION_SETS = [
     # Add more sets of questions as needed
 ]
 
-
 # Number of simulated users
 NUM_SIMULATED_USERS = 5  # Adjust this number based on your testing needs
 
 
 # Function to simulate a user session by sending a series of messages
 def simulate_user_session(session_id, messages):
+    start_time = time.time()  # Record the start time
     responses = []
 
     for message in messages:
@@ -40,7 +41,9 @@ def simulate_user_session(session_id, messages):
         except Exception as e:
             responses.append({'error': str(e)})
 
-    return responses
+    end_time = time.time()  # Record the end time
+    duration = end_time - start_time  # Calculate the duration
+    return responses, duration
 
 
 # Generate user sessions dynamically based on NUM_SIMULATED_USERS
@@ -52,12 +55,12 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_SIMULATED_USERS) as e
     future_to_session = {executor.submit(simulate_user_session, session_id, messages): session_id for
                          session_id, messages in user_sessions}
 
-    # Collect and print the results as they complete
+    # Collect and print the results as they complete, along with the duration
     for future in concurrent.futures.as_completed(future_to_session):
         session_id = future_to_session[future]
         try:
-            session_results = future.result()
-            print(f"Results for Session {session_id}:")
+            session_results, duration = future.result()  # Unpack the results and duration
+            print(f"Results for Session {session_id} (Completed in {duration:.2f} seconds):")
             for result in session_results:
                 print(result)
         except Exception as e:

@@ -8,6 +8,7 @@ Helper file for HossBot MongoDB database operations.
 @version: March 28, 2024 
 """
 
+
 class Connection(object):
 
     def __init__(self):
@@ -23,6 +24,7 @@ class Connection(object):
     @param password: password of MongoDB user (String)
     @param database_name: which MongoDB database to access (String)
     """
+
     def connect(self, username, password, database_name):
         self.username = username
         self.password = password
@@ -33,11 +35,15 @@ class Connection(object):
         uri = f"mongodb://{self.username}:{self.password}@{self.hostname}/{self.database_name}"
         self.client = MongoClient(uri)
 
+        # Create the chat_logs collection if it doesn't exist
+        self.create_chat_logs_collection()
+
     """
     Reads and prints all the documents inside the provided directory
     @param db_choice: which MongoDB database to access (String)
     @param collection_choice: which MongoDB collection to access (String)
     """
+
     def read(self, db_choice, collection_choice):
         db = self.client[db_choice]
         collection = db[collection_choice]
@@ -45,9 +51,9 @@ class Connection(object):
 
         t = []
         for document in result:
-            #print(document)
+            # print(document)
             t.append(document)
-        
+
         return t
 
     """
@@ -56,6 +62,7 @@ class Connection(object):
     @param email: Email of user (String)
     @return 1 (Int) if duplicate is found, inserts new document into collection if unique
     """
+
     def insert_users(self, name, email):
         db = self.client["chatbot"]
         collection = db["users"]
@@ -70,6 +77,7 @@ class Connection(object):
     Inserts one link into the links table after checking for duplicates. If duplicate is found, tally is updated
     @param link_url: URL of pre-made link (String)
     """
+
     def insert_links(self, link_url):
         db = self.client["chatbot"]
         collection = db["links"]
@@ -87,6 +95,7 @@ class Connection(object):
     @param response_flag_3: User reports as inappropriate answer (Int)
     @param save_flag: Flags that chat was saved by user (Int)
     """
+
     def insert_chat_log(self, user_id, chat_log, response_flag_1, response_flag_2, response_flag_3, save_flag):
         db = self.client["chatbot"]
         collection = db["chatlog"]
@@ -100,6 +109,7 @@ class Connection(object):
     If duplicate exists, update tally instead.
     @param question: Pre-made question that was clicked/being inserted.
     """
+
     def insert_question(self, question):
         db = self.client["chatbot"]
         collection = db["premade_questions"]
@@ -113,6 +123,7 @@ class Connection(object):
     @param input_email: Email that needs to be checked
     @return 1 (Int) if email already exists, 0 (Int) if email does not exist yet  
     """
+
     def find_email(self, input_email):
         strip_email = input_email.strip()
         lower_email = strip_email.lower()
@@ -121,11 +132,64 @@ class Connection(object):
         record = collection.find({"email": lower_email})
         return record[0]['email']
 
+    """"""
+
+    """
+    Gets chat history of a given HSU.class instance 
+    @param self the instance of HSU we're using to access said chat history
+    @param user_id the id associated with a given chat log history 
+    """
+
+    def get_chat_history(self, user_id):
+        try:
+            db = self.client["chatbot"]
+            collection = db["chat_logs"]
+            chat_log = collection.find_one({"user_id": user_id})
+            if chat_log:
+                return chat_log["chat_history"]
+            else:
+                return []
+        except Exception as e:
+            raise Exception(f"Error retrieving chat history: {str(e)}")
+
+    """
+    Appends chat history to the associated user_id
+    @param self the instance of HSU.py 
+    @param user_id the id associated with the given chat log history
+    @param chat_history the chat history we're goign to append to that given chat log 
+    """
+
+    def update_chat_history(self, user_id, chat_history):
+        try:
+            db = self.client["chatbot"]
+            collection = db["chat_logs"]
+            collection.update_one(
+                {"user_id": user_id},
+                {"$set": {"chat_history": chat_history}},
+                upsert=True
+            )
+        except Exception as e:
+            raise Exception(f"Error updating chat history: {str(e)}")
+
+    """
+    Temporary method used to create the chat_log section
+    @param self the instance of this connection 
+    """
+
+    def create_chat_logs_collection(self):
+        db = self.client["chatbot"]
+        collection_name = "chat_logs"
+
+        if collection_name not in db.list_collection_names():
+            db.create_collection(collection_name)
+            db[collection_name].create_index("user_id")
+
     """
     Checks if inserted link already exists
     @param link_url: URL that needs to be checked
     @return 1 (Int) if URL already exists, 0 (Int) if URL does not exist yet  
     """
+
     def find_link(self, link_url):
         db = self.client["chatbot"]
         collection = db["links"]
@@ -137,6 +201,7 @@ class Connection(object):
     @param question: Question that needs to be checked
     @return 1 (Int) if question already exists, 0 (Int) if question does not exist yet  
     """
+
     def find_question(self, question):
         db = self.client["chatbot"]
         collection = db["premade_questions"]
@@ -148,6 +213,7 @@ class Connection(object):
     @param link_url: URL whose tally needs to be checked
     @return tally of provided URL (Int)
     """
+
     def find_tally(self, link_url):
         db = self.client["chatbot"]
         collection = db["links"]
@@ -158,6 +224,7 @@ class Connection(object):
     Adds 1 to tally of provided URL
     @param link_url: URL whose tally needs to be updated
     """
+
     def update_link_tally(self, link_url):
         db = self.client["chatbot"]
         collection = db["links"]
@@ -169,6 +236,7 @@ class Connection(object):
     Adds 1 to tally of provided question
     @param question: question whose tally needs to be updated
     """
+
     def update_question_tally(self, question):
         db = self.client["chatbot"]
         collection = db["premade_questions"]
@@ -180,6 +248,7 @@ class Connection(object):
     Delete a user from the users table
     @param object_id: MongoDB Object ID of the user who needs to be deleted
     """
+
     def delete_users(self, object_id):
         db = self.client["chatbot"]
         collection = db["users"]
@@ -189,6 +258,7 @@ class Connection(object):
     Delete a chat log from the chatlog table
     @param object_id: MongoDB Object ID of the chat that needs to be deleted
     """
+
     def delete_chat_log(self, object_id):
         db = self.client["chatbot"]
         collection = db["chatlog"]
@@ -198,6 +268,7 @@ class Connection(object):
     Delete a link from the links table
     @param object_id: MongoDB Object ID of the pre-provided link that needs to be deleted
     """
+
     def delete_link(self, object_id):
         db = self.client["chatbot"]
         collection = db["links"]
@@ -207,6 +278,7 @@ class Connection(object):
     Delete a pre-made question from the premade_questions table
     @param object_id: MongoDB Object ID of the pre-made question that needs to be deleted
     """
+
     def delete_question(self, object_id):
         db = self.client["chatbot"]
         collection = db["premade_questions"]
@@ -215,16 +287,18 @@ class Connection(object):
     """
     Closes connection to MongoDB
     """
+
     def close(self):
         # Close the connection
         self.client.close()
+
 
 test = Connection()
 Connection.connect(test, "admin", "Stevencantremember", "admin")
 # Connection.insert_users(test, 2, "Steven Barnas", "steven@hsutx.edu")
 # Connection.insert_links(test, "www.hsutx.edu")
 # Connection.update_tally(test, "www.hsutx.edu")
-Connection.read(test,"chatbot", "users")
+Connection.read(test, "chatbot", "users")
 # Connection.read(test,"chatbot", "links")
 # Connection.delete_chat_log(test, '65d7863a3a91bedf9928cf8f')
 # Connection.read(test,"chatbot", "chatlog")
