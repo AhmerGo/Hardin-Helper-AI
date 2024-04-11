@@ -6,6 +6,10 @@ module.exports = {
       backgroundImage: {
         hsu: "url('assets/HSU.png')",
       },
+      screens: {
+        xsml: { max: "450px" },
+      },
+      maxWidth: {},
     },
     colors: {
       purple: "#581483",
