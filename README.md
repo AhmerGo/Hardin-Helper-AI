@@ -58,7 +58,7 @@ This project is licensed under the MIT License.
 
 **Q: Do I need to be on campus to use Hardin Helper AI?**
 
-A: No, Hardin Helper AI is accessible anywhere with an internet connection.
+A: Yes, you need to be on campus to access this ChatBot.
 
 **Q: Is Hardin Helper AI secure?**
 
